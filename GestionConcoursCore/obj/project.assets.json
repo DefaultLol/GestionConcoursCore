@@ -14890,11 +14890,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tarik Ouhamou\\source\\repos\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
+      "projectUniqueName": "C:\\Users\\Tarik Ouhamou\\source\\repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
       "projectName": "GestionConcoursCore",
-      "projectPath": "C:\\Users\\Tarik Ouhamou\\source\\repos\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
+      "projectPath": "C:\\Users\\Tarik Ouhamou\\source\\repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
       "packagesPath": "C:\\Users\\Tarik Ouhamou\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tarik Ouhamou\\source\\repos\\GestionConcoursCore\\GestionConcoursCore\\obj\\",
+      "outputPath": "C:\\Users\\Tarik Ouhamou\\source\\repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

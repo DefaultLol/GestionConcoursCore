@@ -5,6 +5,80 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\Register.css" />
+    <Content Remove="wwwroot\images\admin_pic\admin.svg" />
+    <Content Remove="wwwroot\images\admin_pic\admin2.svg" />
+    <Content Remove="wwwroot\images\admin_pic\admin_icon.svg" />
+    <Content Remove="wwwroot\images\admin_pic\delete.svg" />
+    <Content Remove="wwwroot\images\admin_pic\four.svg" />
+    <Content Remove="wwwroot\images\admin_pic\grp.svg" />
+    <Content Remove="wwwroot\images\admin_pic\school.svg" />
+    <Content Remove="wwwroot\images\admin_pic\school4.svg" />
+    <Content Remove="wwwroot\images\admin_pic\third.svg" />
+    <Content Remove="wwwroot\images\admin_pic\undraw_posting_photo.svg" />
+    <Content Remove="wwwroot\images\bg-title-01.jpg" />
+    <Content Remove="wwwroot\images\bg-title-02.jpg" />
+    <Content Remove="wwwroot\images\ensa.jfif" />
+    <Content Remove="wwwroot\images\ENSA.jpg" />
+    <Content Remove="wwwroot\images\ensa_2.jfif" />
+    <Content Remove="wwwroot\images\ensa_2_jimage.tif" />
+    <Content Remove="wwwroot\images\ensa_home.jpg" />
+    <Content Remove="wwwroot\images\grad.svg" />
+    <Content Remove="wwwroot\images\homePage\about-img.jpg" />
+    <Content Remove="wwwroot\images\homePage\ensa.png" />
+    <Content Remove="wwwroot\images\homePage\ensas.jpg" />
+    <Content Remove="wwwroot\images\homePage\intro-bg.jpg" />
+    <Content Remove="wwwroot\images\homePage\logo_ensa.png" />
+    <Content Remove="wwwroot\images\homePage\partners\1.png" />
+    <Content Remove="wwwroot\images\homePage\partners\10.png" />
+    <Content Remove="wwwroot\images\homePage\partners\2.png" />
+    <Content Remove="wwwroot\images\homePage\partners\3.png" />
+    <Content Remove="wwwroot\images\homePage\partners\4.png" />
+    <Content Remove="wwwroot\images\homePage\partners\5.png" />
+    <Content Remove="wwwroot\images\homePage\partners\6.png" />
+    <Content Remove="wwwroot\images\homePage\partners\7.png" />
+    <Content Remove="wwwroot\images\homePage\partners\8.png" />
+    <Content Remove="wwwroot\images\homePage\partners\9.png" />
+    <Content Remove="wwwroot\images\icons_user\bac.svg" />
+    <Content Remove="wwwroot\images\icons_user\edit_icon.svg" />
+    <Content Remove="wwwroot\images\icons_user\graduation.svg" />
+    <Content Remove="wwwroot\images\icon\avatar-01.jpg" />
+    <Content Remove="wwwroot\images\icon\avatar-02.jpg" />
+    <Content Remove="wwwroot\images\icon\avatar-03.jpg" />
+    <Content Remove="wwwroot\images\icon\avatar-04.jpg" />
+    <Content Remove="wwwroot\images\icon\avatar-05.jpg" />
+    <Content Remove="wwwroot\images\icon\avatar-06.jpg" />
+    <Content Remove="wwwroot\images\icon\avatar-big-01.jpg" />
+    <Content Remove="wwwroot\images\icon\ensa_2.jfif" />
+    <Content Remove="wwwroot\images\icon\icon.jpg" />
+    <Content Remove="wwwroot\images\icon\logo-blue.png" />
+    <Content Remove="wwwroot\images\icon\logo-mini.png" />
+    <Content Remove="wwwroot\images\icon\logo-white.png" />
+    <Content Remove="wwwroot\images\icon\logo.png" />
+    <Content Remove="wwwroot\images\icon\Untitled-1.jpg" />
+    <Content Remove="wwwroot\images\image.jpg" />
+    <Content Remove="wwwroot\images\Mark.jpg" />
+    <Content Remove="wwwroot\images\opac.PNG" />
+    <Content Remove="wwwroot\images\read.svg" />
+    <Content Remove="wwwroot\images\userPic\1345.jpg" />
+    <Content Remove="wwwroot\images\userPic\2594.jpg" />
+    <Content Remove="wwwroot\images\userPic\4027.png" />
+    <Content Remove="wwwroot\images\userPic\5165.jfif" />
+    <Content Remove="wwwroot\images\userPic\5238.jpg" />
+    <Content Remove="wwwroot\images\userPic\5968.jpg" />
+    <Content Remove="wwwroot\images\userPic\6215.jpg" />
+    <Content Remove="wwwroot\images\userPic\6478.jpg" />
+    <Content Remove="wwwroot\images\userPic\7888.jpg" />
+    <Content Remove="wwwroot\images\userPic\8187.png" />
+    <Content Remove="wwwroot\images\userPic\8332.jpg" />
+    <Content Remove="wwwroot\images\userPic\8521.png" />
+    <Content Remove="wwwroot\images\userPic\9977.jpg" />
+    <Content Remove="wwwroot\images\userPic\ENSA.jpg" />
+    <Content Remove="wwwroot\images\userPic\icon.jpg" />
+    <Content Remove="wwwroot\images\userPic\Photo 066.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
@@ -18,6 +92,85 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="NLog.Extensions.Logging" Version="1.0.0-rtm-rc7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Pictures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\Register.css" />
+    <None Include="wwwroot\images\admin_pic\admin.svg" />
+    <None Include="wwwroot\images\admin_pic\admin2.svg" />
+    <None Include="wwwroot\images\admin_pic\admin_icon.svg" />
+    <None Include="wwwroot\images\admin_pic\delete.svg" />
+    <None Include="wwwroot\images\admin_pic\four.svg" />
+    <None Include="wwwroot\images\admin_pic\grp.svg" />
+    <None Include="wwwroot\images\admin_pic\school.svg" />
+    <None Include="wwwroot\images\admin_pic\school4.svg" />
+    <None Include="wwwroot\images\admin_pic\third.svg" />
+    <None Include="wwwroot\images\admin_pic\undraw_posting_photo.svg" />
+    <None Include="wwwroot\images\bg-title-01.jpg" />
+    <None Include="wwwroot\images\bg-title-02.jpg" />
+    <None Include="wwwroot\images\ensa.jfif" />
+    <None Include="wwwroot\images\ENSA.jpg" />
+    <None Include="wwwroot\images\ensa_2.jfif" />
+    <None Include="wwwroot\images\ensa_2_jimage.tif" />
+    <None Include="wwwroot\images\ensa_home.jpg" />
+    <None Include="wwwroot\images\grad.svg" />
+    <None Include="wwwroot\images\homePage\about-img.jpg" />
+    <None Include="wwwroot\images\homePage\ensa.png" />
+    <None Include="wwwroot\images\homePage\ensas.jpg" />
+    <None Include="wwwroot\images\homePage\intro-bg.jpg" />
+    <None Include="wwwroot\images\homePage\logo_ensa.png" />
+    <None Include="wwwroot\images\homePage\partners\1.png" />
+    <None Include="wwwroot\images\homePage\partners\10.png" />
+    <None Include="wwwroot\images\homePage\partners\2.png" />
+    <None Include="wwwroot\images\homePage\partners\3.png" />
+    <None Include="wwwroot\images\homePage\partners\4.png" />
+    <None Include="wwwroot\images\homePage\partners\5.png" />
+    <None Include="wwwroot\images\homePage\partners\6.png" />
+    <None Include="wwwroot\images\homePage\partners\7.png" />
+    <None Include="wwwroot\images\homePage\partners\8.png" />
+    <None Include="wwwroot\images\homePage\partners\9.png" />
+    <None Include="wwwroot\images\icons_user\bac.svg" />
+    <None Include="wwwroot\images\icons_user\edit_icon.svg" />
+    <None Include="wwwroot\images\icons_user\graduation.svg" />
+    <None Include="wwwroot\images\icon\avatar-01.jpg" />
+    <None Include="wwwroot\images\icon\avatar-02.jpg" />
+    <None Include="wwwroot\images\icon\avatar-03.jpg" />
+    <None Include="wwwroot\images\icon\avatar-04.jpg" />
+    <None Include="wwwroot\images\icon\avatar-05.jpg" />
+    <None Include="wwwroot\images\icon\avatar-06.jpg" />
+    <None Include="wwwroot\images\icon\avatar-big-01.jpg" />
+    <None Include="wwwroot\images\icon\ensa_2.jfif" />
+    <None Include="wwwroot\images\icon\icon.jpg" />
+    <None Include="wwwroot\images\icon\logo-blue.png" />
+    <None Include="wwwroot\images\icon\logo-mini.png" />
+    <None Include="wwwroot\images\icon\logo-white.png" />
+    <None Include="wwwroot\images\icon\logo.png" />
+    <None Include="wwwroot\images\icon\Untitled-1.jpg" />
+    <None Include="wwwroot\images\image.jpg" />
+    <None Include="wwwroot\images\Mark.jpg" />
+    <None Include="wwwroot\images\opac.PNG" />
+    <None Include="wwwroot\images\read.svg" />
+    <None Include="wwwroot\images\userPic\1345.jpg" />
+    <None Include="wwwroot\images\userPic\2594.jpg" />
+    <None Include="wwwroot\images\userPic\4027.png" />
+    <None Include="wwwroot\images\userPic\5165.jfif" />
+    <None Include="wwwroot\images\userPic\5238.jpg" />
+    <None Include="wwwroot\images\userPic\5968.jpg" />
+    <None Include="wwwroot\images\userPic\6215.jpg" />
+    <None Include="wwwroot\images\userPic\6478.jpg" />
+    <None Include="wwwroot\images\userPic\7888.jpg" />
+    <None Include="wwwroot\images\userPic\8187.png" />
+    <None Include="wwwroot\images\userPic\8332.jpg" />
+    <None Include="wwwroot\images\userPic\8521.png" />
+    <None Include="wwwroot\images\userPic\9977.jpg" />
+    <None Include="wwwroot\images\userPic\ENSA.jpg" />
+    <None Include="wwwroot\images\userPic\icon.jpg" />
+    <None Include="wwwroot\images\userPic\Photo 066.jpg" />
   </ItemGroup>
 
 </Project>

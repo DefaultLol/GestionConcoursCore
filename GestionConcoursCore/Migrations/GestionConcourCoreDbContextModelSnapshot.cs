@@ -34,6 +34,10 @@ namespace GestionConcoursCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Admins");
+
+                    b.HasData(
+                        new { ID = 1, Password = "admin", Username = "admin" }
+                    );
                 });
 
             modelBuilder.Entity("GestionConcoursCore.Models.AnneeUniversitaire", b =>
@@ -318,6 +322,13 @@ namespace GestionConcoursCore.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Filieres");
+
+                    b.HasData(
+                        new { ID = 1, Nom = "Informatique" },
+                        new { ID = 2, Nom = "GTR" },
+                        new { ID = 3, Nom = "Industriel" },
+                        new { ID = 4, Nom = "GPMC" }
+                    );
                 });
 
             modelBuilder.Entity("GestionConcoursCore.Models.AnneeUniversitaire", b =>
