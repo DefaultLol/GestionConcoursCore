@@ -36,7 +36,7 @@ namespace GestionConcoursCore
             services.AddMvc();
             services.AddDbContext<GestionConcourCoreDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
 
-
+            services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -56,6 +56,7 @@ namespace GestionConcoursCore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
