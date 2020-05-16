@@ -6,21 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GestionConcoursCore.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace GestionConcoursCore.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly GestionConcourCoreDbContext _context;
+        private readonly GestionConcourCoreDbContext db;
 
-        public AdminController(GestionConcourCoreDbContext context)
+        public AdminController(GestionConcourCoreDbContext db)
         {
-            _context = context;
+            this.db = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            if (isAdmin())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "AdminAuth");
+
         }
 
         public IActionResult Recherche3()
@@ -111,6 +117,17 @@ namespace GestionConcoursCore.Controllers
         public IActionResult FichierScanne4()
         {
             return View();
+        }
+
+        private bool isAdmin()
+        {
+            string admin = HttpContext.Session.GetString("admin");
+            if (admin != null)
+            {
+                if (admin.Equals("true"))
+                { return true; }
+            }
+            return false;
         }
 
     }

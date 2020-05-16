@@ -95,10 +95,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Content\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\content_admin\js\demo\chart-area-demo.js" />
     <None Include="wwwroot\content_admin\js\demo\chart-bar-demo.js" />
     <None Include="wwwroot\content_admin\js\demo\chart-pie-demo.js" />
