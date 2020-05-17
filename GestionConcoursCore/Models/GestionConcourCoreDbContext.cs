@@ -24,5 +24,40 @@ namespace GestionConcoursCore.Models
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Epreuves> Epreuves { get; set; }
         public DbSet<Fichier> Fichiers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Filiere>().HasData(
+                new Filiere
+                {
+                    ID = 1,
+                    Nom = "Informatique"
+                },
+                new Filiere
+                {
+                    ID = 2,
+                    Nom = "GTR"
+                },
+                new Filiere
+                {
+                    ID = 3,
+                    Nom = "Industriel"
+                },
+                new Filiere
+                {
+                    ID = 4,
+                    Nom = "GPMC"
+                }
+            );
+
+            modelBuilder.Entity<Admin>().HasData(
+                new Admin
+                {
+                    ID=1,
+                    Username="admin",
+                    Password="admin"
+                }
+            );
+        }
     }
 }
