@@ -65,7 +65,7 @@ using GestionConcoursCore.Models;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n");
             EndContext();
             BeginContext(98, 720, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5db7d45fe6f04527b403e4ee5e4e3546", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1c1aeeafc3d4dc3a125cfb8b48aaaf4", async() => {
                 BeginContext(104, 707, true);
                 WriteLiteral(@"
 
@@ -102,7 +102,7 @@ using GestionConcoursCore.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(822, 907, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7368c926871f4e2aa3cdcd3cd1515bf7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4213171b16e54c2c905dd30f3488c57d", async() => {
                 BeginContext(842, 394, true);
                 WriteLiteral(@"
 

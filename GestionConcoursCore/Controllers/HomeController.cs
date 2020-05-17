@@ -15,29 +15,49 @@ namespace GestionConcoursCore.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
+        public IActionResult Acceuil()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult ModifierPersonnel()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
+        }
+
+        public IActionResult ModifierBac()
+        {
+            return View();
+        }
+
+        public IActionResult ModifierDiplome()
+        {
+            return View();
+        }
+        
+        public IActionResult FichierScanne()
+        {
+            return View();
+        }
+
+        public IActionResult ModifierFiliere()
+        {
+            return View();
+        }
+
+        public IActionResult Fiche()
+        {
+            return View();
+        }
+
+        public IActionResult Epreuve()
+        {
+            return View();
+        }
+
+        public IActionResult Deconnexion()
+        {
+            return View();
         }
     }
 }

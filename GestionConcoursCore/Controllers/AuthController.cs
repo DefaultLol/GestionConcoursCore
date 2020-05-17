@@ -195,7 +195,7 @@ namespace GestionConcoursCore.Controllers
                     message.IsBodyHtml = true;
                     smtp.Send(message);
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Auth");
             }
             return View(diplome);
         }
