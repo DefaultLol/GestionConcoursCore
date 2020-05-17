@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GestionConcoursCore.Models;
 using Microsoft.AspNetCore.Http;
+using GestionConcoursCore.Services;
 
 namespace GestionConcoursCore.Controllers
 {
     public class AdminController : Controller
     {
         private readonly GestionConcourCoreDbContext db;
+        private ISearch3Service search;
+        private ICorbeil3Service corbeil;
 
-        public AdminController(GestionConcourCoreDbContext db)
+        public AdminController(GestionConcourCoreDbContext db,ISearch3Service search, ICorbeil3Service corbeil)
         {
             this.db = db;
+            this.search = search;
+            this.corbeil=corbeil;
         }
 
         public IActionResult Index()
@@ -28,26 +33,77 @@ namespace GestionConcoursCore.Controllers
             return RedirectToAction("Login", "AdminAuth");
 
         }
-
+        /*-----------------------------------------------RECHERCHE ET CORBEIL-----------------------------------------------*/
         public IActionResult Recherche3()
         {
-            return View();
+            if (isAdmin())
+            {
+                var x = search.generalSearch(3);
+                return View(x);
+            }
+            return RedirectToAction("Login", "AdminAuth");
         }
 
         public IActionResult Recherche4()
         {
-            return View();
+            if (isAdmin())
+            {
+                var x = search.generalSearch(4);
+                return View(x);
+            }
+            return RedirectToAction("Login", "AdminAuth");
         }
 
         public IActionResult Corbeil3()
         {
-            return View();
+            if (isAdmin())
+            {
+                var x = corbeil.afficheCorbeil(3);
+                return View(x);
+            }
+            return RedirectToAction("Login", "AdminAuth");
         }
 
         public IActionResult Corbeil4()
         {
-            return View();
+            if (isAdmin())
+            {
+                var x = corbeil.afficheCorbeil(4);
+                return View(x);
+            }
+            return RedirectToAction("Login", "AdminAuth");
         }
+        public JsonResult RestoreStudent(string cne, int Niveau)
+        {
+            var x = corbeil.restoreCorbeil(cne, Niveau);
+            return Json(x);
+        }
+
+        public JsonResult SearchCriteria(string Criteria, string Key, string Diplome, string Filiere, int Niveau)
+        {
+            var x = search.specifiedSearch(Criteria, Key, Diplome, Filiere, Niveau);
+            return Json(x);
+        }
+
+        public JsonResult SearchCriteriaCorb(string Criteria, string Key, string Diplome, string Filiere, int Niveau)
+        {
+            var x = corbeil.searchCriteria(Criteria, Key, Diplome, Filiere, Niveau);
+            return Json(x);
+        }
+        //delete candidat
+        public JsonResult deleteStudent(string cne, int Niveau)
+        {
+            var x = search.deleteCandidat(cne, Niveau);
+            return Json(x);
+        }
+
+        public JsonResult conformeStudent(string cne, int Niveau)
+        {
+            var x = search.conformCandidat(cne, Niveau);
+            return Json(x);
+        }
+
+
 
         public IActionResult Preselection3()
         {

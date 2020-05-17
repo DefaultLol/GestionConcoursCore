@@ -62,11 +62,6 @@ C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcou
 C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.dll
 C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.pdb
 C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.csproj.CopyComplete
-C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Create.g.cshtml.cs
-C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Delete.g.cshtml.cs
-C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Details.g.cshtml.cs
-C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Edit.g.cshtml.cs
-C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Index.g.cshtml.cs
 C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Login.g.cshtml.cs
 C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Register.g.cshtml.cs
 C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Step1.g.cshtml.cs
@@ -134,3 +129,26 @@ D:\2emeGI-S2\DotNet\Projet3\V1\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor
 D:\2emeGI-S2\DotNet\Projet3\V1\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\AdminAuth\Error.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V1\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\AdminAuth\Login.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V1\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminAuthLayout.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\AdminAuth\Error.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\AdminAuth\Login.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Corbeil3.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Corbeil4.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Correction3.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Correction4.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\FichierScanne3.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\FichierScanne4.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Index.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\ListeFinale3.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\ListFinale4.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Preselection3.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Preselection4.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Recherche3.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Recherche4.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Selection3.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Selection4.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique3.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique3ApresConcours.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique4.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique4ApresConcours.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminAuthLayout.g.cshtml.cs
+C:\Users\Tarik Ouhamou\source\repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_AdminLayout.g.cshtml.cs
