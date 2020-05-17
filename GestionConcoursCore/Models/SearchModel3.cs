@@ -37,5 +37,8 @@ namespace GestionConcoursCore.Models
         public Boolean Admis { get; set; }
         public string Filiere { get; set; }
         public Boolean NonConforme { get; set; }
+        public string Diplome1 { get; set; }
+        public string Diplome2 { get; set; }
+        public string Diplome3 { get; set; }
     }
 }

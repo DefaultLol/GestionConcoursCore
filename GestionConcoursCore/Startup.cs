@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GestionConcoursCore.Models;
+using GestionConcoursCore.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -35,6 +36,8 @@ namespace GestionConcoursCore
 
             services.AddMvc();
             services.AddDbContext<GestionConcourCoreDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("myconn")));
+            services.AddTransient<ISearch3Service, Search3ServiceImp>();
+            services.AddTransient<ICorbeil3Service, Corbeil3ServiceImp>();
 
             services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

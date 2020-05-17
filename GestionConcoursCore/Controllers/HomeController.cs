@@ -5,54 +5,101 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GestionConcoursCore.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace GestionConcoursCore.Controllers
 {
     public class HomeController : Controller
     {
+        private bool isCandidat()
+        {
+            string cne = HttpContext.Session.GetString("cne");
+            if (cne != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
 
         public IActionResult Acceuil()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
 
         public IActionResult ModifierPersonnel()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
 
         public IActionResult ModifierBac()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
 
         public IActionResult ModifierDiplome()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
         
         public IActionResult FichierScanne()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
 
         public IActionResult ModifierFiliere()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
 
         public IActionResult Fiche()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
 
         public IActionResult Epreuve()
         {
-            return View();
+            if (isCandidat())
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Auth");
         }
 
         public IActionResult Deconnexion()
