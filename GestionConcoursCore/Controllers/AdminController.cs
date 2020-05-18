@@ -16,12 +16,14 @@ namespace GestionConcoursCore.Controllers
         private readonly GestionConcourCoreDbContext db;
         private ISearch3Service search;
         private ICorbeil3Service corbeil;
+        private ISelectionService selection;
 
-        public AdminController(GestionConcourCoreDbContext db,ISearch3Service search,ICorbeil3Service corbeil)
+        public AdminController(GestionConcourCoreDbContext db,ISearch3Service search,ICorbeil3Service corbeil,ISelectionService selection)
         {
             this.db = db;
             this.search = search;
             this.corbeil = corbeil;
+            this.selection = selection;
         }
 
         public IActionResult Index()
@@ -80,7 +82,7 @@ namespace GestionConcoursCore.Controllers
             var x = corbeil.restoreCorbeil(cne, Niveau);
             return Json(x);
         }
-
+       
         public JsonResult SearchCriteria(string Criteria, string Key, string Diplome, string Filiere, int Niveau)
         {
             var x = search.specifiedSearch(Criteria, Key, Diplome, Filiere, Niveau);
@@ -136,6 +138,7 @@ namespace GestionConcoursCore.Controllers
             return View();
         }
 
+        // -------------------------------------- DEBUT SELECTION ----------------------
         public IActionResult Selection3()
         {
             return View();
@@ -155,6 +158,74 @@ namespace GestionConcoursCore.Controllers
         {
             return View();
         }
+
+        public JsonResult GetConfigurationSelectiona()
+        {
+            return Json("shut");
+        }
+
+        public JsonResult SearchCriteriah(string Criteria, string Key, string Diplome, string Filiere, int Niveau)
+        {
+            var x = search.specifiedSearch(Criteria, Key, Diplome, Filiere, Niveau);
+            return Json(x);
+        }
+        public JsonResult GetConfigurationSelection(string filiere, int nv)
+        {
+            
+            var data = selection.getConfigurationSelection(filiere, nv);
+
+            return Json(data);
+        }
+
+        public JsonResult SetConfigurationSelection(string f, int cs, int np, int la, double nm, int cm, string cl, string nv)
+        {
+            ConfigurationSelection conf = new ConfigurationSelection();
+
+            conf.Filiere = f;
+            conf.CoeffMath = cm;
+            conf.CoeffSpecialite = cs;
+            conf.NbrPlace = np;
+            conf.NoteMin = nm;
+            conf.NbrPlaceListAtt = la;
+            conf.TypeClassement = cl;
+            conf.Niveau = nv;
+
+            selection.updateConfigurationSelection(conf);
+            if (nv == "3")
+            {
+                selection.calculeNoteGlobale(f);
+            }
+
+            var data = selection.selectStudents(f, nv);
+            return Json(data);
+        }
+
+        public JsonResult GetListePrincipal(string filiere)
+        {
+            var data = selection.getListPrincipale(filiere);
+            return Json(data);
+        }
+
+
+        public JsonResult GetListeAttente(string filiere)
+        {
+            var data = selection.getListAttente(filiere);
+            return Json(data);
+        }
+
+        public JsonResult GetListePrincipalSup(string filiere)
+        {
+            var data = selection.getListPrincipaleSup(filiere);
+            return Json(data);
+        }
+
+        public JsonResult GetListeAttenteSup(string filiere)
+        {
+            var data = selection.getListAttenteSup(filiere);
+            return Json(data);
+        }
+
+        // ------------------------------ FIN SELECTION
 
         public IActionResult Statistique3ApresConcours()
         {

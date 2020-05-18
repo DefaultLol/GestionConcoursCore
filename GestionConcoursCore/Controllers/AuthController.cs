@@ -192,10 +192,19 @@ namespace GestionConcoursCore.Controllers
                     Body = body
                 })
                 {
-                    message.IsBodyHtml = true;
-                    smtp.Send(message);
+                    try
+                    {
+                        message.IsBodyHtml = true;
+                        smtp.Send(message);
+                        return RedirectToAction("Index", "Home");
+                    }
+                    catch
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    
                 }
-                return RedirectToAction("Index", "Home");
+               
             }
             return View(diplome);
         }
