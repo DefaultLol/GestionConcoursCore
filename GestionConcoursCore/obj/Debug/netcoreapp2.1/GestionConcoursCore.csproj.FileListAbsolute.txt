@@ -302,3 +302,6 @@ D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.pdb
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.csproj.CopyComplete
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.csprojAssemblyReference.cache
+D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Enregistrement.g.cshtml.cs
+D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Epreuve.g.cshtml.cs
+D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Landing\Index.g.cshtml.cs

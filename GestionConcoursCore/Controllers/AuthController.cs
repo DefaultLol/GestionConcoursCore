@@ -213,6 +213,11 @@ namespace GestionConcoursCore.Controllers
 
         public ActionResult Login()
         {
+            string cne = HttpContext.Session.GetString("cne");
+            if (cne != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -353,6 +358,13 @@ namespace GestionConcoursCore.Controllers
                 return Redirect("Login");
             }
             return View(candidat);
+        }
+
+
+        public IActionResult Deconnexion()
+        {
+            HttpContext.Session.Remove("cne");
+            return Redirect("Login");
         }
     }
 }

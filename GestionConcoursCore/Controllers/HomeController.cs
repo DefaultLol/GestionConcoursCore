@@ -11,21 +11,12 @@ namespace GestionConcoursCore.Controllers
 {
     public class HomeController : Controller
     {
-        private bool isCandidat()
-        {
-            string cne = HttpContext.Session.GetString("cne");
-            if (cne != null)
-            {
-                return true;
-            }
-            return false;
-        }
-
+        
         public IActionResult Index()
         {
             if (isCandidat())
             {
-                return View();
+                return RedirectToAction("Acceuil", "Home");
             }
             return RedirectToAction("Login", "Auth");
         }
@@ -102,9 +93,15 @@ namespace GestionConcoursCore.Controllers
             return RedirectToAction("Login", "Auth");
         }
 
-        public IActionResult Deconnexion()
+        private bool isCandidat()
         {
-            return View();
+            string cne = HttpContext.Session.GetString("cne");
+            if (cne != null)
+            {
+                return true;
+            }
+            return false;
         }
+
     }
 }

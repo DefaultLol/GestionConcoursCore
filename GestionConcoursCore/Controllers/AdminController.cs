@@ -328,6 +328,22 @@ namespace GestionConcoursCore.Controllers
             return View();
         }
 
+        public IActionResult Enregistrement()
+        {
+            return View();
+        }
+
+        public IActionResult EnregistrementCin()
+        {
+            return View();
+        }
+
+        public IActionResult Epreuve()
+        {
+            return View();
+        }
+        
+
         private bool isAdmin()
         {
             string admin = HttpContext.Session.GetString("admin");

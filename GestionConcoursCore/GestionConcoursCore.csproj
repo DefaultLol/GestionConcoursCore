@@ -1911,6 +1911,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\content_user\" />
+    <Folder Include="wwwroot\homePage\" />
   </ItemGroup>
 
 </Project>
