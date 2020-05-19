@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GestionConcoursCore.Data;
 using GestionConcoursCore.Models;
 using GestionConcoursCore.Services;
 using Microsoft.AspNetCore.Builder;
@@ -39,6 +40,7 @@ namespace GestionConcoursCore
             services.AddTransient<ISearch3Service, Search3ServiceImp>();
             services.AddTransient<ICorbeil3Service, Corbeil3ServiceImp>();
             services.AddTransient<ISelectionService, SelectionServiceImp>();
+            services.AddTransient<IPreselectionService, PreselectionServiceImp>();
 
             services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

@@ -8,22 +8,23 @@ using Microsoft.EntityFrameworkCore;
 using GestionConcoursCore.Models;
 using Microsoft.AspNetCore.Http;
 using GestionConcoursCore.Services;
+using GestionConcoursCore.Data;
 
 namespace GestionConcoursCore.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly GestionConcourCoreDbContext db;
         private ISearch3Service search;
         private ICorbeil3Service corbeil;
         private ISelectionService selection;
+        private IPreselectionService preselec;
 
-        public AdminController(GestionConcourCoreDbContext db,ISearch3Service search,ICorbeil3Service corbeil,ISelectionService selection)
+        public AdminController(ISearch3Service search,ICorbeil3Service corbeil,ISelectionService selection, IPreselectionService preselec)
         {
-            this.db = db;
             this.search = search;
             this.corbeil = corbeil;
             this.selection = selection;
+            this.preselec = preselec;
         }
 
         public IActionResult Index()
@@ -35,7 +36,8 @@ namespace GestionConcoursCore.Controllers
             return RedirectToAction("Login", "AdminAuth");
 
         }
-        /*--------------------------------------------------------Recherche---------------------------------------------------------- */
+
+        /*################################################  DEBUT  RECHERCHE  ################################################ */
 
         public IActionResult Recherche3()
         {
@@ -107,16 +109,95 @@ namespace GestionConcoursCore.Controllers
             var x = search.conformCandidat(cne, Niveau);
             return Json(x);
         }
-        /*-------------------------------------------------------- Fin Recherche---------------------------------------------------------- */
+
+        /*###################################################  FIN  RECHERCHE  ############################################# */
+
+        /*#################################################  DEBUT  PRESELECTION  ############################################# */
+
         public IActionResult Preselection3()
         {
-            return View();
+            if (isAdmin())
+            {
+                return View();
+            }
+
+            return RedirectToAction("Login", "AdminAuth");
         }
 
         public IActionResult Preselection4()
         {
-            return View();
+            if (isAdmin())
+            {
+                return View();
+            }
+
+            return RedirectToAction("Login", "AdminAuth");
         }
+
+        public JsonResult CalculerPreselec4(string fil, string diplome, int Cs1, int Cs2, int Cs3, int Cs4, int Cs5, int Cs6, int Cbac, string seuil, int niv)
+        {
+            ConfigurationPreselection conf = new ConfigurationPreselection()
+            {
+                Filiere = fil,
+                TypeDiplome = diplome,
+                CoeffBac = Cbac,
+                CoeffS1 = Cs1,
+                CoeffS2 = Cs2,
+                CoeffS3 = Cs3,
+                CoeffS4 = Cs4,
+                CoeffS5 = Cs5,
+                CoeffS6 = Cs6,
+                NoteSeuil = Convert.ToDouble(seuil.Replace(".", ","))
+            };
+
+            preselec.setConfig(conf, niv);
+            preselec.calculerPreselec(niv, fil, diplome);
+            var x = preselec.getConvoques(niv, fil, diplome);
+
+            return Json(x);
+        }
+
+        public JsonResult CalculerPreselec(string fil, string diplome, int Cs1, int Cs2, int Cs3, int Cs4, int Cbac, string seuil, int niv)
+        {
+            ConfigurationPreselection conf = new ConfigurationPreselection()
+            {
+                Filiere = fil,
+                TypeDiplome = diplome,
+                CoeffBac = Cbac,
+                CoeffS1 = Cs1,
+                CoeffS2 = Cs2,
+                CoeffS3 = Cs3,
+                CoeffS4 = Cs4,
+                NoteSeuil = Convert.ToDouble(seuil.Replace(".", ","))
+            };
+
+            preselec.setConfig(conf, niv);
+
+            preselec.calculerPreselec(niv, fil, diplome);
+            var x = preselec.getConvoques(niv, fil, diplome);
+
+            return Json(x);
+        }
+
+        public JsonResult GetConfig(string fil, string diplome)
+        {
+            ConfigurationPreselection list = preselec.getConfig(fil, diplome);
+            return Json(list);
+        }
+
+        public JsonResult GetConvoquets(string fil, string diplome, int niv)
+        {
+            var list = preselec.getConvoques(niv, fil, diplome);
+            return Json(list);
+        }
+
+        public JsonResult GetPourcentage(string fil, string diplome, int niv)
+        {
+            var list = preselec.getPourcentage(niv, fil, diplome);
+            return Json(list);
+        }
+
+        /*#################################################  FIN  PRESELECTION  ############################################# */
 
         public IActionResult Statistique3()
         {
@@ -138,7 +219,7 @@ namespace GestionConcoursCore.Controllers
             return View();
         }
 
-        // -------------------------------------- DEBUT SELECTION ----------------------
+        /*###################################################  DEBUT  SELECTION  ############################################# */
         public IActionResult Selection3()
         {
             return View();
@@ -225,7 +306,7 @@ namespace GestionConcoursCore.Controllers
             return Json(data);
         }
 
-        // ------------------------------ FIN SELECTION
+        /*###################################################  FIN  SELECTION  ############################################# */
 
         public IActionResult Statistique3ApresConcours()
         {

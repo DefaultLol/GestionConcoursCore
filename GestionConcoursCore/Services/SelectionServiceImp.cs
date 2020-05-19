@@ -1,4 +1,5 @@
-﻿using GestionConcoursCore.Models;
+﻿using GestionConcoursCore.Data;
+using GestionConcoursCore.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
