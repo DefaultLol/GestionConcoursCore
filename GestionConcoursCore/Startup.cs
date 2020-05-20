@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using GestionConcoursCore.Data;
 using GestionConcoursCore.Models;
 using GestionConcoursCore.Services;
+using GestionConcoursCore.Services_User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -41,6 +42,7 @@ namespace GestionConcoursCore
             services.AddTransient<ICorbeil3Service, Corbeil3ServiceImp>();
             services.AddTransient<ISelectionService, SelectionServiceImp>();
             services.AddTransient<IPreselectionService, PreselectionServiceImp>();
+            services.AddTransient<ICandidatService, CandidatServiceImp>();
 
             services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

@@ -27,6 +27,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 0,
                     Sexe = "Femme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -49,6 +50,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 0,
                     Sexe = "Femme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -71,6 +73,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 451,
                     Sexe = "Homme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -90,9 +93,10 @@ namespace GestionConcoursCore.Data
                     Prenom = "Tarik",
                     Email = "hicham@gmail.com",
                     Ville = "Agadir",
-                    Nationalite = "Marocain",
+                    Nationalite = "Marocaine",
                     Num_dossier = 452,
                     Sexe = "Homme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -115,6 +119,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 453,
                     Sexe = "Femme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -137,6 +142,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 454,
                     Sexe = "Femme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -159,6 +165,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 455,
                     Sexe = "Homme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -181,6 +188,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 456,
                     Sexe = "Femme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -203,6 +211,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 457,
                     Sexe = "Femme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -225,6 +234,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 459,
                     Sexe = "Homme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -247,6 +257,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 461,
                     Sexe = "Femme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -269,6 +280,7 @@ namespace GestionConcoursCore.Data
                     Nationalite = "Marocaine",
                     Num_dossier = 151,
                     Sexe = "Femme",
+                    Photo = "icon.jpg",
                     Convoque = false,
                     Niveau = 3,
                     Verified = 1,
@@ -302,8 +314,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -315,8 +327,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -330,8 +342,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -345,8 +357,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -358,8 +370,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -371,8 +383,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -386,8 +398,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -399,8 +411,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -412,8 +424,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -425,8 +437,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -438,8 +450,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
                 new AnneeUniversitaire()
                 {
@@ -451,8 +463,8 @@ namespace GestionConcoursCore.Data
                     Redoublant1 = "Non",
                     Redoublant2 = "Non",
                     Redoublant3 = "Non",
-                    AnneUni1 = "2016",
-                    AnneUni2 = "2017"
+                    AnneUni1 = "2015/2016",
+                    AnneUni2 = "2016/2017"
                 },
 
             };

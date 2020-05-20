@@ -6,6 +6,7 @@ using System.Net.Mail;
 using System.Threading.Tasks;
 using GestionConcoursCore.Data;
 using GestionConcoursCore.Models;
+using GestionConcoursCore.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -177,6 +178,7 @@ namespace GestionConcoursCore.Controllers
                 //string body = "<a href=\"http://localhost:49969/Auth/Verify?cne="+candidat.Cne+" \">Link</a><br /><p> this is the password : "+candidat.Password+"</p>";
                 string body = z.Nom;
 
+                HttpContext.Session.SetInt32("verified",  z.Verified);
 
                 var smtp = new SmtpClient
                 {
@@ -236,6 +238,7 @@ namespace GestionConcoursCore.Controllers
                 HttpContext.Session.SetInt32("niveau", x.Niveau);
                 HttpContext.Session.SetString("role", "user");
                 HttpContext.Session.SetString("photo", x.Photo);
+                HttpContext.Session.SetInt32("verified", x.Verified);
 
                 if (x.Verified == 1)
                 {
@@ -351,9 +354,16 @@ namespace GestionConcoursCore.Controllers
                     Body = body
                 })
                 {
-                    message.IsBodyHtml = true;
-                    smtp.Send(message);
+                    try
+                    {
+                        message.IsBodyHtml = true;
+                        smtp.Send(message);
+                    }
+                    catch
+                    {
+                    }
                 }
+                
                 TempData["message"] = "Votre mot de passe est : '" + candidat.Password + "'." + " Vous le trouverez sur votre email aussi.";
                 return Redirect("Login");
             }
@@ -364,6 +374,7 @@ namespace GestionConcoursCore.Controllers
         public IActionResult Deconnexion()
         {
             HttpContext.Session.Remove("cne");
+            HttpContext.Session.Remove("verified");
             return Redirect("Login");
         }
     }

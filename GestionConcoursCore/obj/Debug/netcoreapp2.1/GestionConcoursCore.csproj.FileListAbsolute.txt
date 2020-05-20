@@ -276,12 +276,10 @@ D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Step1.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Step2.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Step3.g.cshtml.cs
-D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Acceuil.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Deconnexion.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Epreuve.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Fiche.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\FichierScanne.g.cshtml.cs
-D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\ModifierBac.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\ModifierDiplome.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\ModifierFiliere.g.cshtml.cs
@@ -301,7 +299,8 @@ D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.dll
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.pdb
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.csproj.CopyComplete
-D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.csprojAssemblyReference.cache
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Enregistrement.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Epreuve.g.cshtml.cs
 D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Landing\Index.g.cshtml.cs
+D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.csprojAssemblyReference.cache
+D:\2emeGI-S2\DotNet\Projet3\V2\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Accueil.g.cshtml.cs

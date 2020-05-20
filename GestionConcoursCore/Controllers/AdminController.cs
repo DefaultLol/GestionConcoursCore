@@ -338,11 +338,22 @@ namespace GestionConcoursCore.Controllers
             return View();
         }
 
+
+        /*###################################################  DEBUT  EPREUVE  ############################################# */
+
         public IActionResult Epreuve()
         {
             return View();
         }
-        
+
+        /*public JsonResult UploadEpreuve(UploadModel epr)
+        {
+            var result = epreuve.uploadEpreuve(epr);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }*/
+
+        /*###################################################  FIN  EPREUVE  ############################################# */
+
 
         private bool isAdmin()
         {
