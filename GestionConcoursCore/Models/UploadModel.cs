@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,8 +9,11 @@ namespace GestionConcoursCore.Models
 {
     public class UploadModel
     {
-        //public HttpPostedFileBase file { get; set; }
+        [Required]
         public string matiere { get; set; }
+        [Required]
         public string annee { get; set; }
+        [Required]
+        public IFormFile fichier { get; set; }
     }
 }

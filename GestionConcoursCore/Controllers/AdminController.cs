@@ -18,13 +18,15 @@ namespace GestionConcoursCore.Controllers
         private ICorbeil3Service corbeil;
         private ISelectionService selection;
         private IPreselectionService preselec;
+        private readonly IEpreuveService epreuve;
 
-        public AdminController(ISearch3Service search,ICorbeil3Service corbeil,ISelectionService selection, IPreselectionService preselec)
+        public AdminController(ISearch3Service search,ICorbeil3Service corbeil,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve)
         {
             this.search = search;
             this.corbeil = corbeil;
             this.selection = selection;
             this.preselec = preselec;
+            this.epreuve = epreuve;
         }
 
         public IActionResult Index()
@@ -116,22 +118,22 @@ namespace GestionConcoursCore.Controllers
 
         public IActionResult Preselection3()
         {
-            if (isAdmin())
+            if (!isAdmin())
             {
-                return View();
+                return RedirectToAction("Login", "AdminAuth");
             }
-
-            return RedirectToAction("Login", "AdminAuth");
+            return View();
         }
 
         public IActionResult Preselection4()
         {
-            if (isAdmin())
+            if (!isAdmin())
             {
-                return View();
+                return RedirectToAction("Login", "AdminAuth");
             }
-
-            return RedirectToAction("Login", "AdminAuth");
+            
+            return View();
+            
         }
 
         public JsonResult CalculerPreselec4(string fil, string diplome, int Cs1, int Cs2, int Cs3, int Cs4, int Cs5, int Cs6, int Cbac, string seuil, int niv)
@@ -201,42 +203,74 @@ namespace GestionConcoursCore.Controllers
 
         public IActionResult Statistique3()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult Statistique4()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult Correction3()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult Correction4()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         /*###################################################  DEBUT  SELECTION  ############################################# */
         public IActionResult Selection3()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult Selection4()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult ListeFinale3()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult ListFinale4()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
@@ -310,47 +344,87 @@ namespace GestionConcoursCore.Controllers
 
         public IActionResult Statistique3ApresConcours()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult Statistique4ApresConcours()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult FichierScanne3()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult FichierScanne4()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult Enregistrement()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
         public IActionResult EnregistrementCin()
         {
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
             return View();
         }
 
 
         /*###################################################  DEBUT  EPREUVE  ############################################# */
 
-        public IActionResult Epreuve()
+        public IActionResult UploadEpreuve(string ficher)
         {
-            return View();
+            if (!isAdmin())
+            {
+                return RedirectToAction("Login", "AdminAuth");
+            }
+            return View();            
         }
 
-        /*public JsonResult UploadEpreuve(UploadModel epr)
-        {
-            var result = epreuve.uploadEpreuve(epr);
-            return Json(result, JsonRequestBehavior.AllowGet);
-        }*/
+        [HttpPost]
+        public IActionResult UploadEpreuve(UploadModel model)
+        {            
+            if (ModelState.IsValid)
+            {
+                int msg = epreuve.Upload(model);
+                if (msg == 1)
+                {   TempData["succes"] = "Fichier enregistré avec succes";  }
+                else
+                {   TempData["error"] = "Erreur lors d'enregistrement !!!";  }
+
+                return View();
+            }
+
+            return View(model);
+        }
+        
 
         /*###################################################  FIN  EPREUVE  ############################################# */
 

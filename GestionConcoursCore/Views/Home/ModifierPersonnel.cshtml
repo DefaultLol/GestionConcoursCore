@@ -21,10 +21,10 @@
                 <div class="offset-2">
                     <div class="row">
                         <div class="col-md-8 mb-3 showcase_content_area">
-                            <div class="custom-file">
-                                <input type="file" class="form-control custom-file-input" id="input" name="imageUpload">   
-                                <label class="custom-file-label" for="customFile">Choisir une photo</label>
-                            </div>
+                                <div class="custom-file">
+                                    <input type="file" class="form-control custom-file-input" id="input" name="imageUpload">
+                                    <label class="custom-file-label" for="customFile">Choisir une photo</label>
+                                </div>
                             <br />
                         </div>
                         <br />
@@ -215,6 +215,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
+        $('#input').on('change', function () {
+            //get the file name
+            var fileName = $(this).val().split("\\").pop();
+            //replace the "Choose a file" label
+            $(this).next('.custom-file-label').html(fileName);
+        })
         $("#uploadButton").click(function () {
             var file = $("#input").get(0).files[0];
             var formData = new FormData();

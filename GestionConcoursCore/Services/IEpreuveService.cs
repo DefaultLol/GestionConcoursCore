@@ -8,7 +8,7 @@ namespace GestionConcoursCore.Services
 {
     public interface IEpreuveService
     {
-        string uploadEpreuve(UploadModel epreuve);
-        IEnumerable<DiplomeFichierModel> diplomeFile(string cne, int niveau);
+        int Upload(UploadModel epreuve);
+        //IEnumerable<DiplomeFichierModel> diplomeFile(string cne, int niveau);
     }
 }

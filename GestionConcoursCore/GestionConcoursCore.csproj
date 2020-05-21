@@ -1912,6 +1912,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\content_user\" />
     <Folder Include="wwwroot\homePage\" />
+    <Folder Include="wwwroot\epreuves\" />
   </ItemGroup>
 
 </Project>
