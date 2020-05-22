@@ -18,15 +18,17 @@ namespace GestionConcoursCore.Controllers
         private ICorbeil3Service corbeil;
         private ISelectionService selection;
         private IPreselectionService preselec;
+        private IEnregistrementService enregistrement;
         private readonly IEpreuveService epreuve;
 
-        public AdminController(ISearch3Service search,ICorbeil3Service corbeil,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve)
+        public AdminController(ISearch3Service search,ICorbeil3Service corbeil,IEnregistrementService enregistrement,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve)
         {
             this.search = search;
             this.corbeil = corbeil;
             this.selection = selection;
             this.preselec = preselec;
             this.epreuve = epreuve;
+            this.enregistrement = enregistrement;
         }
 
         public IActionResult Index()
@@ -424,9 +426,33 @@ namespace GestionConcoursCore.Controllers
 
             return View(model);
         }
-        
 
         /*###################################################  FIN  EPREUVE  ############################################# */
+
+        /*###################################################  ENREGISTREMENT  ############################################# */
+
+        //lister les candidats par niveau :
+        public JsonResult etudiantByNiveau(string niveau)
+        {
+            var liste = enregistrement.listetByNiveau(Int32.Parse(niveau));
+            return Json(liste);
+        }
+
+        public JsonResult EnregistrementCandidat(string cin)
+        {
+            enregistrement.enregisterByCin(cin);
+            return Json("test");
+        }
+
+        //recuperer les infos sur un candidat
+        public JsonResult etudiantByCin(string cin)
+        {
+            var infos = enregistrement.infosCandidatByCin(cin);
+            return Json(infos);
+        }
+
+        /*################################################### FIN ENREGISTREMENT  ############################################# */
+
 
 
         private bool isAdmin()
@@ -439,6 +465,8 @@ namespace GestionConcoursCore.Controllers
             }
             return false;
         }
+
+       
 
     }
 }

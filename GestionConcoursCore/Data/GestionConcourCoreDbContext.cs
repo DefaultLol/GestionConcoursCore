@@ -9,6 +9,7 @@ namespace GestionConcoursCore.Data
 {
     public class GestionConcourCoreDbContext : DbContext
     {
+     
         public GestionConcourCoreDbContext(DbContextOptions options) : base(options)
         {
         }

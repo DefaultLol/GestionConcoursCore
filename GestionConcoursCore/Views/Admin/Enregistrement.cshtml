@@ -3,6 +3,95 @@
     ViewData["Title"] = "Enregistrement";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<!--
+    <div class="container-fluid">
 
-<h2>Enregistrement</h2>
+        <div class="align-content-center">
+            <h3 class="font-weight-bold text-center pt-3 pb-5" id="title">Sélection pour <span id="q">3</span>ème année</h3>
+            <div class="row mb-4 justify-content-center">
+                <div class=" col-md-7">
+
+                    <div class="form-horizontal ">
+
+                        <form id="#formConf">
+                            <div class="form-group row">
+                                <label class="col-md-4 col-form-label">Niveau : </label>
+                                <div class="col-md-8">
+                                    <select class="form-control niveau" name="Niveau" id="NiveauSelect">
+                                        <option selected value="0">Choisir le niveau</option>
+                                        <option value="3">3ème année</option>
+                                        <option value="4">4ème année</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    -->
+<!--ici on va lister les candidats de chaque niveau
+<div class="container">
+    <table class="table" id="tableSelection">
+    </table>
+</div>
+
+ </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("select.niveau").change(function () {
+            //f = niveau (3 ou bien 4) :
+            var f = $(this).children("option:selected").val();
+            $("#q").empty();
+            $("#q").append(f);
+
+            $("#tableSelection").empty();
+
+            $.get("/Admin/listetByNiveau", { niveau: f }, function (data) {
+                //tableau à afficher si le niveau est sélectionné :
+                $("#tableSelection").append(
+                    '<thead ><tr><th class="text-center">N°</th><th class="text-center">Nom</th>' +
+                    ' <th class="text-center">Prenom</th> <th class="text-center">Filiere</th><th class="text-center">Cin</th>' +
+                    ' <th class="text-center">Enregistrer</th></tr> </thead> <tbody id="bodyId"></tbody>'
+                )
+
+                var num = 0;
+                $.each(data, function (index, ligne) {
+                    num++;
+                    $("#bodyId").append(    //append inside <tbody>
+                        ' <tr> <td class="text-center" id="n">' + num + '</td> <td class="text-center">ligne.Nom</td> <td class="text-center">ligne.Prenom</td><td class="text-center">ligne.NomFil</td><td class="text-center">ligne.Cin</td>'
+                        + '<td class="text-center"> <button type="button" class="btn btn-info" value="' + ligne.Cin + '"> Enregistrer </button> </td>'
+
+                        //chaque button a un attribut value = cin
+                    )
+                });
+
+
+            });
+
+
+            //if button clicked : enregistrement du candidat + désactivation du boutton :
+            $("button").click(function () {
+                var cinval = $(this).attr("value");
+                //enregistrement du candidat :
+                $.get("/Admin/EnregistrementCandidat", { cin: cinval }, function (data) {
+
+
+                });
+
+                //désactiver le bouton après le clique
+                $(this).attr('disabled', 'disabled');
+            });
+
+        });
+    });
+
+
+</script>
 
