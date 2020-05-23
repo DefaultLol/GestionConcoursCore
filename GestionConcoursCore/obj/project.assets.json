@@ -14884,23 +14884,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kfifa\\.nuget\\packages\\": {},
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kfifa\\Source\\Repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
+      "projectUniqueName": "D:\\project\\academic project\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
       "projectName": "GestionConcoursCore",
-      "projectPath": "C:\\Users\\kfifa\\Source\\Repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
-      "packagesPath": "C:\\Users\\kfifa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kfifa\\Source\\Repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\obj\\",
+      "projectPath": "D:\\project\\academic project\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "D:\\project\\academic project\\GestionConcoursCore\\GestionConcoursCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\kfifa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using GestionConcoursCore.Services;
 using GestionConcoursCore.Data;
 using System.Diagnostics;
+using GestionConcoursCore.ViewModels;
 
 namespace GestionConcoursCore.Controllers
 {
@@ -26,8 +27,9 @@ namespace GestionConcoursCore.Controllers
         private IEnregistrementService enregistrement;
 		private ICorrectionService corret;
 		private readonly IEpreuveService epreuve;
+        private IStatistiqueService statistique;
 
-        public AdminController(GestionConcourCoreDbContext context,ISearch3Service search,ICorbeil3Service corbeil,IEnregistrementService enregistrement,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve, ICorrectionService corret)
+        public AdminController(GestionConcourCoreDbContext context,ISearch3Service search,ICorbeil3Service corbeil,IEnregistrementService enregistrement,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve, ICorrectionService corret, IStatistiqueService statistique)
         {
             this.search = search;
             this.corbeil = corbeil;
@@ -36,7 +38,9 @@ namespace GestionConcoursCore.Controllers
             this.epreuve = epreuve;
             this.enregistrement = enregistrement;
 			this.corret = corret;
+            this.statistique = statistique;
 			_context = context;
+            
 		}
 
         public IActionResult Index()
@@ -959,7 +963,313 @@ namespace GestionConcoursCore.Controllers
 			return RedirectToAction("index");
 
 		}
+        ///!!!!!!!!!!!!!!!!!!!!---------statistique-----------!!!!!!!!!!\\\
+        public ActionResult Statistique3A()
+        {
+            if (isAdmin())
+            {
+                
+                    List<Statistique> statistiquesPre = new List<Statistique>();
+                    List<Statistique> statistiquesConvoque = new List<Statistique>();
+
+                    List<Filiere> filieres = new List<Filiere>();
+
+                    Statistique statPerDiplomPre = new Statistique();
+                    Statistique statPerDiplomConv = new Statistique();
+
+                    
+
+                        filieres = statistique.GetFilieres();
+                        foreach (var f in filieres)
+                        {
+                            statistiquesPre.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatPreisncrit(f.ID, "deug", 3),
+                                nbDut = statistique.getCandidatPreisncrit(f.ID, "dut", 3),
+                                nbLicenceFnd = statistique.getCandidatPreisncrit(f.ID, "Lic.fnd", 3),
+                                nbLicencePro = statistique.getCandidatPreisncrit(f.ID, "Lic.pro", 3),
+                                nbLicenceSt = statistique.getCandidatPreisncrit(f.ID, "Lic.st", 3),
+                                nomFiliere = f.Nom
+                            });
+                            statistiquesConvoque.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatConv(f.ID, "deug", 3),
+                                nbDut = statistique.getCandidatConv(f.ID, "dut", 3),
+                                nbLicenceFnd = statistique.getCandidatConv(f.ID, "Lic.fnd", 3),
+                                nbLicencePro = statistique.getCandidatConv(f.ID, "Lic.pro", 3),
+                                nbLicenceSt = statistique.getCandidatConv(f.ID, "Lic.st", 3),
+                                nomFiliere = f.Nom
+                            });
+                        }
+                        statPerDiplomPre = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatPerDiplome("deug", 3),
+                            nbDut = statistique.getNbCandidatPerDiplome("dut", 3),
+                            nbLicenceFnd = statistique.getNbCandidatPerDiplome("Lic.fnd", 3),
+                            nbLicenceSt = statistique.getNbCandidatPerDiplome("Lic.st", 3),
+                            nbLicencePro = statistique.getNbCandidatPerDiplome("Lic.pro", 3),
+                        };
+                        statPerDiplomConv = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatPerDiplomeConv("deug", 3),
+                            nbDut = statistique.getNbCandidatPerDiplomeConv("dut", 3),
+                            nbLicenceFnd = statistique.getNbCandidatPerDiplomeConv("Lic.fnd", 3),
+                            nbLicenceSt = statistique.getNbCandidatPerDiplomeConv("Lic.st", 3),
+                            nbLicencePro = statistique.getNbCandidatPerDiplomeConv("Lic.pro", 3),
+                        };
+                    
+
+                    ViewData["statistiquesPre"] = statistiquesPre;
+                    ViewData["statistiquesConvoque"] = statistiquesConvoque;
+                    ViewBag.statPerDiplomPre = statPerDiplomPre;
+                    ViewBag.statPerDiplomConv = statPerDiplomConv;
+                    return View();
+                
+            }
+            return RedirectToAction("Login", "AdminAuth");
+        }
+        public ActionResult Statistique4A()
+        {
+            if (isAdmin())
+            {
+                
+                    List<Statistique> statistiquesPre = new List<Statistique>();
+                    List<Statistique> statistiquesConvoque = new List<Statistique>();
+
+                    List<Filiere> filieres = new List<Filiere>();
+
+                    Statistique statPerDiplomPre = new Statistique();
+                    Statistique statPerDiplomConv = new Statistique();
+
+                    
+
+                        filieres = statistique.GetFilieres();
+                        foreach (var f in filieres)
+                        {
+                            statistiquesPre.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatPreisncrit(f.ID, "deug", 4),
+                                nbDut = statistique.getCandidatPreisncrit(f.ID, "dut", 4),
+                                nbLicenceFnd = statistique.getCandidatPreisncrit(f.ID, "Lic.fnd", 4),
+                                nbLicencePro = statistique.getCandidatPreisncrit(f.ID, "Lic.pro", 4),
+                                nbLicenceSt = statistique.getCandidatPreisncrit(f.ID, "Lic.st", 4),
+                                nomFiliere = f.Nom
+                            });
+                            statistiquesConvoque.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatConv(f.ID, "deug", 4),
+                                nbDut = statistique.getCandidatConv(f.ID, "dut", 4),
+                                nbLicenceFnd = statistique.getCandidatConv(f.ID, "Lic.fnd", 4),
+                                nbLicencePro = statistique.getCandidatConv(f.ID, "Lic.pro", 4),
+                                nbLicenceSt = statistique.getCandidatConv(f.ID, "Lic.st", 4),
+                                nomFiliere = f.Nom
+                            });
+                        }
+                        statPerDiplomPre = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatPerDiplome("deug", 4),
+                            nbDut = statistique.getNbCandidatPerDiplome("dut", 4),
+                            nbLicenceFnd = statistique.getNbCandidatPerDiplome("Lic.fnd", 4),
+                            nbLicenceSt = statistique.getNbCandidatPerDiplome("Lic.st", 4),
+                            nbLicencePro = statistique.getNbCandidatPerDiplome("Lic.pro", 4),
+                        };
+                        statPerDiplomConv = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatPerDiplomeConv("deug", 4),
+                            nbDut = statistique.getNbCandidatPerDiplomeConv("dut", 4),
+                            nbLicenceFnd = statistique.getNbCandidatPerDiplomeConv("Lic.fnd", 4),
+                            nbLicenceSt = statistique.getNbCandidatPerDiplomeConv("Lic.st", 4),
+                            nbLicencePro = statistique.getNbCandidatPerDiplomeConv("Lic.pro", 4),
+                        };
+                    
+
+                    ViewData["statistiquesPre"] = statistiquesPre;
+                    ViewData["statistiquesConvoque"] = statistiquesConvoque;
+                    ViewBag.statPerDiplomPre = statPerDiplomPre;
+                    ViewBag.statPerDiplomConv = statPerDiplomConv;
+                    return View();
+                
+            }
+            return RedirectToAction("Login", "AdminAuth");
+        }
+        public ActionResult Statistique3ApresConcour()
+        {
+            if (isAdmin())
+            {
+                
+                
+                    List<Statistique> statistiquesPresent = new List<Statistique>();
+                    List<Statistique> statistiquesPrincipal = new List<Statistique>();
+                    List<Statistique> statistiquesAttente = new List<Statistique>();
 
 
-	}
+                    List<Filiere> filieres = new List<Filiere>();
+
+                    Statistique statPerDiplomPresent = new Statistique();
+                    Statistique statPerDiplomPrincipale = new Statistique();
+                    Statistique statPerDiplomAtt = new Statistique();
+
+
+                    
+
+                        filieres = statistique.GetFilieres();
+                        foreach (var f in filieres)
+                        {
+                            statistiquesPresent.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatPresent(f.ID, "deug", 3),
+                                nbDut = statistique.getCandidatPresent(f.ID, "dut", 3),
+                                nbLicenceFnd = statistique.getCandidatPresent(f.ID, "Lic.fnd", 3),
+                                nbLicencePro = statistique.getCandidatPresent(f.ID, "Lic.pro", 3),
+                                nbLicenceSt = statistique.getCandidatPresent(f.ID, "Lic.st", 3),
+                                nomFiliere = f.Nom
+                            });
+                            statistiquesPrincipal.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatPrincipale(f.ID, "deug", 3),
+                                nbDut = statistique.getCandidatPrincipale(f.ID, "dut", 3),
+                                nbLicenceFnd = statistique.getCandidatPrincipale(f.ID, "Lic.fnd", 3),
+                                nbLicencePro = statistique.getCandidatPrincipale(f.ID, "Lic.pro", 3),
+                                nbLicenceSt = statistique.getCandidatPrincipale(f.ID, "Lic.st", 3),
+                                nomFiliere = f.Nom
+                            });
+                            statistiquesAttente.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatListeAtt(f.ID, "deug", 3),
+                                nbDut = statistique.getCandidatListeAtt(f.ID, "dut", 3),
+                                nbLicenceFnd = statistique.getCandidatListeAtt(f.ID, "Lic.fnd", 3),
+                                nbLicencePro = statistique.getCandidatListeAtt(f.ID, "Lic.pro", 3),
+                                nbLicenceSt = statistique.getCandidatListeAtt(f.ID, "Lic.st", 3),
+                                nomFiliere = f.Nom
+                            });
+                        }
+                        statPerDiplomPresent = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatPresentPerDiplome("deug", 3),
+                            nbDut = statistique.getNbCandidatPresentPerDiplome("dut", 3),
+                            nbLicenceFnd = statistique.getNbCandidatPresentPerDiplome("Lic.fnd", 3),
+                            nbLicenceSt = statistique.getNbCandidatPresentPerDiplome("Lic.st", 3),
+                            nbLicencePro = statistique.getNbCandidatPresentPerDiplome("Lic.pro", 3),
+                        };
+                        statPerDiplomPrincipale = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatPrincipalPerDiplome("deug", 3),
+                            nbDut = statistique.getNbCandidatPrincipalPerDiplome("dut", 3),
+                            nbLicenceFnd = statistique.getNbCandidatPrincipalPerDiplome("Lic.fnd", 3),
+                            nbLicenceSt = statistique.getNbCandidatPrincipalPerDiplome("Lic.st", 3),
+                            nbLicencePro = statistique.getNbCandidatPrincipalPerDiplome("Lic.pro", 3),
+                        };
+                        statPerDiplomAtt = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatAttPerDiplome("deug", 3),
+                            nbDut = statistique.getNbCandidatAttPerDiplome("dut", 3),
+                            nbLicenceFnd = statistique.getNbCandidatAttPerDiplome("Lic.fnd", 3),
+                            nbLicenceSt = statistique.getNbCandidatAttPerDiplome("Lic.st", 3),
+                            nbLicencePro = statistique.getNbCandidatAttPerDiplome("Lic.pro", 3),
+                        };
+
+                    
+
+                    ViewData["statistiquesPresent"] = statistiquesPresent;
+                    ViewData["statistiquesPrincipal"] = statistiquesPrincipal;
+                    ViewData["statistiquesAttente"] = statistiquesAttente;
+                    ViewBag.statPerDiplomPresent = statPerDiplomPresent;
+                    ViewBag.statPerDiplomPrincipale = statPerDiplomPrincipale;
+                    ViewBag.statPerDiplomAtt = statPerDiplomAtt;
+                    return View();
+                
+            }
+            return RedirectToAction("Login", "AdminAuth");
+        }
+        public ActionResult Statistique4ApresConcour()
+        {
+            if (isAdmin())
+            {
+                
+                    List<Statistique> statistiquesPresent = new List<Statistique>();
+                    List<Statistique> statistiquesPrincipal = new List<Statistique>();
+                    List<Statistique> statistiquesAttente = new List<Statistique>();
+
+
+                    List<Filiere> filieres = new List<Filiere>();
+
+                    Statistique statPerDiplomPresent = new Statistique();
+                    Statistique statPerDiplomPrincipale = new Statistique();
+                    Statistique statPerDiplomAtt = new Statistique();
+
+
+                    
+
+                        filieres = statistique.GetFilieres();
+                        foreach (var f in filieres)
+                        {
+                            statistiquesPresent.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatPresent(f.ID, "deug", 4),
+                                nbDut = statistique.getCandidatPresent(f.ID, "dut", 4),
+                                nbLicenceFnd = statistique.getCandidatPresent(f.ID, "Lic.fnd", 4),
+                                nbLicencePro = statistique.getCandidatPresent(f.ID, "Lic.pro", 4),
+                                nbLicenceSt = statistique.getCandidatPresent(f.ID, "Lic.st", 4),
+                                nomFiliere = f.Nom
+                            });
+                            statistiquesPrincipal.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatPrincipale(f.ID, "deug", 4),
+                                nbDut = statistique.getCandidatPrincipale(f.ID, "dut", 4),
+                                nbLicenceFnd = statistique.getCandidatPrincipale(f.ID, "Lic.fnd", 4),
+                                nbLicencePro = statistique.getCandidatPrincipale(f.ID, "Lic.pro", 4),
+                                nbLicenceSt = statistique.getCandidatPrincipale(f.ID, "Lic.st", 4),
+                                nomFiliere = f.Nom
+                            });
+                            statistiquesAttente.Add(new Statistique
+                            {
+                                nbDeug = statistique.getCandidatListeAtt(f.ID, "deug", 4),
+                                nbDut = statistique.getCandidatListeAtt(f.ID, "dut", 3),
+                                nbLicenceFnd = statistique.getCandidatListeAtt(f.ID, "Lic.fnd", 4),
+                                nbLicencePro = statistique.getCandidatListeAtt(f.ID, "Lic.pro", 4),
+                                nbLicenceSt = statistique.getCandidatListeAtt(f.ID, "Lic.st", 4),
+                                nomFiliere = f.Nom
+                            });
+                        }
+                        statPerDiplomPresent = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatPresentPerDiplome("deug", 4),
+                            nbDut = statistique.getNbCandidatPresentPerDiplome("dut", 4),
+                            nbLicenceFnd = statistique.getNbCandidatPresentPerDiplome("Lic.fnd", 4),
+                            nbLicenceSt = statistique.getNbCandidatPresentPerDiplome("Lic.st", 4),
+                            nbLicencePro = statistique.getNbCandidatPresentPerDiplome("Lic.pro", 4),
+                        };
+                        statPerDiplomPrincipale = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatPrincipalPerDiplome("deug", 4),
+                            nbDut = statistique.getNbCandidatPrincipalPerDiplome("dut", 4),
+                            nbLicenceFnd = statistique.getNbCandidatPrincipalPerDiplome("Lic.fnd", 4),
+                            nbLicenceSt = statistique.getNbCandidatPrincipalPerDiplome("Lic.st", 4),
+                            nbLicencePro = statistique.getNbCandidatPrincipalPerDiplome("Lic.pro", 4),
+                        };
+                        statPerDiplomAtt = new Statistique
+                        {
+                            nbDeug = statistique.getNbCandidatAttPerDiplome("deug", 4),
+                            nbDut = statistique.getNbCandidatAttPerDiplome("dut", 4),
+                            nbLicenceFnd = statistique.getNbCandidatAttPerDiplome("Lic.fnd", 4),
+                            nbLicenceSt = statistique.getNbCandidatAttPerDiplome("Lic.st", 4),
+                            nbLicencePro = statistique.getNbCandidatAttPerDiplome("Lic.pro", 4),
+                        };
+            
+                    
+
+                    ViewData["statistiquesPresent"] = statistiquesPresent;
+                    ViewData["statistiquesPrincipal"] = statistiquesPrincipal;
+                    ViewData["statistiquesAttente"] = statistiquesAttente;
+                    ViewBag.statPerDiplomPresent = statPerDiplomPresent;
+                    ViewBag.statPerDiplomPrincipale = statPerDiplomPrincipale;
+                    ViewBag.statPerDiplomAtt = statPerDiplomAtt;
+                    return View();
+                
+            }
+            return RedirectToAction("Login", "AdminAuth");
+        }
+
+
+    }
 }
