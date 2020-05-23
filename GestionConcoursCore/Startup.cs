@@ -46,8 +46,9 @@ namespace GestionConcoursCore
             services.AddTransient<Services.IEpreuveService, Services.EpreuveServiceImp>();
             services.AddTransient<Services_User.IEpreuveService, Services_User.EpreuveServiceImp>();
             services.AddScoped<IEnregistrementService, EnregistrementServiceImp>();
+			services.AddScoped <ICorrectionService, CorrectionServiceImp> ();
 
-            services.AddSession();
+			services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

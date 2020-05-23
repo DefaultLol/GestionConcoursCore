@@ -9,19 +9,25 @@ using GestionConcoursCore.Models;
 using Microsoft.AspNetCore.Http;
 using GestionConcoursCore.Services;
 using GestionConcoursCore.Data;
+using System.Diagnostics;
 
 namespace GestionConcoursCore.Controllers
 {
     public class AdminController : Controller
     {
-        private ISearch3Service search;
+		private readonly GestionConcourCoreDbContext _context;
+
+		
+
+		private ISearch3Service search;
         private ICorbeil3Service corbeil;
         private ISelectionService selection;
         private IPreselectionService preselec;
         private IEnregistrementService enregistrement;
-        private readonly IEpreuveService epreuve;
+		private ICorrectionService corret;
+		private readonly IEpreuveService epreuve;
 
-        public AdminController(ISearch3Service search,ICorbeil3Service corbeil,IEnregistrementService enregistrement,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve)
+        public AdminController(GestionConcourCoreDbContext context,ISearch3Service search,ICorbeil3Service corbeil,IEnregistrementService enregistrement,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve, ICorrectionService corret)
         {
             this.search = search;
             this.corbeil = corbeil;
@@ -29,7 +35,9 @@ namespace GestionConcoursCore.Controllers
             this.preselec = preselec;
             this.epreuve = epreuve;
             this.enregistrement = enregistrement;
-        }
+			this.corret = corret;
+			_context = context;
+		}
 
         public IActionResult Index()
         {
@@ -466,7 +474,492 @@ namespace GestionConcoursCore.Controllers
             return false;
         }
 
-       
 
-    }
+		/*################################################  CORRECTION  ################################################ */
+
+		
+
+		public IActionResult INFO()
+		{
+			var model = new UserViewModel();
+			model.NoteSpecialite = new List<double>();
+			//model.Classement = new List<int>();
+			model.Cne = new List<string>();
+			model.NoteMath = new List<double>();
+
+			model.Num_dossier = new List<int>();
+			model.Cin = new List<string>();
+			model.Prenom = new List<string>();
+			model.Filiere = new List<string>();
+			model.Diplome = new List<string>();
+			model.Nom = new List<string>();
+
+
+
+
+
+
+
+
+
+		string type_fil = "informatique";
+			if (!isAdmin())
+			{
+				return RedirectToAction("Login", "AdminAuth");
+			}
+			var x = corret.corr(type_fil);
+			foreach (var item in x)
+			{
+				model.Cne.Add(item.Cne);
+				model.NoteSpecialite.Add(item.NoteSpecialite);
+				model.NoteMath.Add(item.NoteMath);
+				model.Num_dossier.Add(item.Num_dossier);
+				model.Cin.Add(item.Cin);
+				model.Prenom.Add(item.Prenom);
+				model.Filiere.Add(item.Filiere);
+				model.Diplome.Add(item.Diplome);
+				model.Nom.Add(item.Nom);
+
+			}
+			return View(model);
+		}
+
+
+
+
+	[HttpPost]
+		public ActionResult INFO_Post(UserViewModel etudiants)
+		{
+
+		
+
+				for (int i = 0; i < etudiants.Cne.Count; i++)
+			{
+			
+				ConcourEcrit con = _context.CouncourEcrits.Find(etudiants.Cne[i]);
+				con.NoteMath = etudiants.NoteMath[i];
+				con.NoteSpecialite = etudiants.NoteSpecialite[i];
+				_context.SaveChanges();
+			}
+
+			return RedirectToAction("index");
+
+		}
+
+
+
+		public ActionResult GTR()
+		{
+		   string type_fil = "gtr";
+			var model = new UserViewModel();
+			model.NoteSpecialite = new List<double>();
+			//model.Classement = new List<int>();
+			model.Cne = new List<string>();
+			model.NoteMath = new List<double>();
+
+			model.Num_dossier = new List<int>();
+			model.Cin = new List<string>();
+			model.Prenom = new List<string>();
+			model.Filiere = new List<string>();
+			model.Diplome = new List<string>();
+			model.Nom = new List<string>();
+
+			if (!isAdmin())
+			{
+				return RedirectToAction("Login", "AdminAuth");
+			}
+			var x = corret.corr(type_fil);
+			foreach (var item in x)
+			{
+				model.Cne.Add(item.Cne);
+				model.NoteSpecialite.Add(item.NoteSpecialite);
+				model.NoteMath.Add(item.NoteMath);
+				model.Num_dossier.Add(item.Num_dossier);
+				model.Cin.Add(item.Cin);
+				model.Prenom.Add(item.Prenom);
+				model.Filiere.Add(item.Filiere);
+				model.Diplome.Add(item.Diplome);
+				model.Nom.Add(item.Nom);
+
+			}
+			return View(model);
+		}
+
+
+
+		[HttpPost]
+		public ActionResult GTR_Post(UserViewModel etudiants)
+		{
+			for (int i = 0; i < etudiants.Cne.Count; i++)
+			{
+
+				ConcourEcrit con = _context.CouncourEcrits.Find(etudiants.Cne[i]);
+				con.NoteMath = etudiants.NoteMath[i];
+				con.NoteSpecialite = etudiants.NoteSpecialite[i];
+				_context.SaveChanges();
+			}
+
+			return RedirectToAction("index");
+
+		}
+
+		public ActionResult GPMC()
+		{
+		  string type_fil = "gpmc";
+			var model = new UserViewModel();
+			model.NoteSpecialite = new List<double>();
+			//model.Classement = new List<int>();
+			model.Cne = new List<string>();
+			model.NoteMath = new List<double>();
+
+			model.Num_dossier = new List<int>();
+			model.Cin = new List<string>();
+			model.Prenom = new List<string>();
+			model.Filiere = new List<string>();
+			model.Diplome = new List<string>();
+			model.Nom = new List<string>();
+
+			if (!isAdmin())
+			{
+				return RedirectToAction("Login", "AdminAuth");
+			}
+			var x = corret.corr(type_fil);
+			foreach (var item in x)
+			{
+				model.Cne.Add(item.Cne);
+				model.NoteSpecialite.Add(item.NoteSpecialite);
+				model.NoteMath.Add(item.NoteMath);
+				model.Num_dossier.Add(item.Num_dossier);
+				model.Cin.Add(item.Cin);
+				model.Prenom.Add(item.Prenom);
+				model.Filiere.Add(item.Filiere);
+				model.Diplome.Add(item.Diplome);
+				model.Nom.Add(item.Nom);
+
+			}
+			return View(model);
+		}
+
+
+
+		[HttpPost]
+		public ActionResult GPMC_Post(UserViewModel etudiants)
+		{
+			for (int i = 0; i < etudiants.Cne.Count; i++)
+			{
+
+				ConcourEcrit con = _context.CouncourEcrits.Find(etudiants.Cne[i]);
+				con.NoteMath = etudiants.NoteMath[i];
+				con.NoteSpecialite = etudiants.NoteSpecialite[i];
+				_context.SaveChanges();
+			}
+
+			return RedirectToAction("index");
+
+		}
+
+		public ActionResult INDUS()
+		{
+		  string type_fil = "indus";
+			var model = new UserViewModel();
+			model.NoteSpecialite = new List<double>();
+			//model.Classement = new List<int>();
+			model.Cne = new List<string>();
+			model.NoteMath = new List<double>();
+
+			model.Num_dossier = new List<int>();
+			model.Cin = new List<string>();
+			model.Prenom = new List<string>();
+			model.Filiere = new List<string>();
+			model.Diplome = new List<string>();
+			model.Nom = new List<string>();
+
+			if (!isAdmin())
+			{
+				return RedirectToAction("Login", "AdminAuth");
+			}
+			var x = corret.corr(type_fil);
+			foreach (var item in x)
+			{
+				model.Cne.Add(item.Cne);
+				model.NoteSpecialite.Add(item.NoteSpecialite);
+				model.NoteMath.Add(item.NoteMath);
+				model.Num_dossier.Add(item.Num_dossier);
+				model.Cin.Add(item.Cin);
+				model.Prenom.Add(item.Prenom);
+				model.Filiere.Add(item.Filiere);
+				model.Diplome.Add(item.Diplome);
+				model.Nom.Add(item.Nom);
+
+			}
+			return View(model);
+		}
+
+
+
+		[HttpPost]
+		public ActionResult INDUS_Post(UserViewModel etudiants)
+		{
+			for (int i = 0; i < etudiants.Cne.Count; i++)
+			{
+
+				ConcourEcrit con = _context.CouncourEcrits.Find(etudiants.Cne[i]);
+				con.NoteMath = etudiants.NoteMath[i];
+				con.NoteSpecialite = etudiants.NoteSpecialite[i];
+				_context.SaveChanges();
+			}
+
+			return RedirectToAction("index");
+
+		}
+
+
+
+		public ActionResult INFO4()
+		{
+		string type_fil = "informatique";
+			var model = new UserViewModel();
+			model.Classement = new List<int>();
+			model.Cne = new List<string>();
+
+
+			model.Num_dossier = new List<int>();
+			model.Cin = new List<string>();
+			model.Prenom = new List<string>();
+			model.Filiere = new List<string>();
+			model.Diplome = new List<string>();
+			model.Etablissement  = new List<string>();
+			model.Nom = new List<string>();
+			model.VilleObtention = new List<string>();
+			model.Specialite = new List<string>();
+
+
+			if (!isAdmin())
+			{
+				return RedirectToAction("Login", "AdminAuth");
+			}
+			var x = corret.corr4(type_fil);
+			foreach (var item in x)
+			{				 
+				model.Cne.Add(item.Cne);
+				model.Num_dossier.Add(item.Num_dossier);
+				model.Cin.Add(item.Cin);
+				model.Prenom.Add(item.Prenom);
+				model.Filiere.Add(item.Filiere);
+				model.Diplome.Add(item.Diplome);
+				model.Nom.Add(item.Nom);
+				model.Etablissement.Add(item.Etablissement);
+				model.VilleObtention.Add(item.VilleObtention);
+				model.Specialite.Add(item.Specialite);
+				model.Classement.Add(item.Classement);
+
+
+
+			}
+			return View(model);
+		}
+
+
+
+		[HttpPost]
+		public ActionResult INFO_Post4(UserViewModel etudiants)
+		{
+			for (int i = 0; i < etudiants.Cne.Count; i++)
+			{
+
+				ConcourOral con = _context.CouncourOrals.Find(etudiants.Cne[i]);
+				con.Classement = etudiants.Classement[i];
+				_context.SaveChanges();
+			}
+
+			return RedirectToAction("index");
+
+
+			
+
+		}
+
+
+		public ActionResult GTR4()
+		{
+		  string type_fil = "gtr";
+			var model = new UserViewModel();
+			model.Classement = new List<int>();
+			model.Cne = new List<string>();
+
+
+			model.Num_dossier = new List<int>();
+			model.Cin = new List<string>();
+			model.Prenom = new List<string>();
+			model.Filiere = new List<string>();
+			model.Diplome = new List<string>();
+			model.Etablissement = new List<string>();
+			model.Nom = new List<string>();
+			model.VilleObtention = new List<string>();
+			model.Specialite = new List<string>();
+
+
+			if (!isAdmin())
+			{
+				return RedirectToAction("Login", "AdminAuth");
+			}
+			var x = corret.corr4(type_fil);
+			foreach (var item in x)
+			{
+				model.Cne.Add(item.Cne);
+				model.Num_dossier.Add(item.Num_dossier);
+				model.Cin.Add(item.Cin);
+				model.Prenom.Add(item.Prenom);
+				model.Filiere.Add(item.Filiere);
+				model.Diplome.Add(item.Diplome);
+				model.Nom.Add(item.Nom);
+				model.Etablissement.Add(item.Etablissement);
+				model.VilleObtention.Add(item.VilleObtention);
+				model.Specialite.Add(item.Specialite);
+				model.Classement.Add(item.Classement);
+
+			}
+			return View(model);
+		}
+
+		
+
+		[HttpPost]
+		public ActionResult GTR_Post4(UserViewModel etudiants)
+		{
+
+			for (int i = 0; i < etudiants.Cne.Count; i++)
+			{
+
+				ConcourOral con = _context.CouncourOrals.Find(etudiants.Cne[i]);
+				con.Classement = etudiants.Classement[i];
+				_context.SaveChanges();
+			}
+
+			return RedirectToAction("index");
+
+		}
+
+
+		public ActionResult GPMC4()
+		{
+			string type_fil = "gpmc";
+			var model = new UserViewModel();
+			model.Classement = new List<int>();
+			model.Cne = new List<string>();
+
+
+			model.Num_dossier = new List<int>();
+			model.Cin = new List<string>();
+			model.Prenom = new List<string>();
+			model.Filiere = new List<string>();
+			model.Diplome = new List<string>();
+			model.Etablissement = new List<string>();
+			model.Nom = new List<string>();
+			model.VilleObtention = new List<string>();
+			model.Specialite = new List<string>();
+
+
+			if (!isAdmin())
+			{
+				return RedirectToAction("Login", "AdminAuth");
+			}
+			var x = corret.corr4(type_fil);
+			foreach (var item in x)
+			{
+				model.Cne.Add(item.Cne);
+				model.Num_dossier.Add(item.Num_dossier);
+				model.Cin.Add(item.Cin);
+				model.Prenom.Add(item.Prenom);
+				model.Filiere.Add(item.Filiere);
+				model.Diplome.Add(item.Diplome);
+				model.Nom.Add(item.Nom);
+				model.Etablissement.Add(item.Etablissement);
+				model.VilleObtention.Add(item.VilleObtention);
+				model.Specialite.Add(item.Specialite);
+				model.Classement.Add(item.Classement);
+
+			}
+			return View(model);
+		}
+
+
+
+		[HttpPost]
+		public ActionResult GPMC_Post4(UserViewModel etudiants)
+		{
+			for (int i = 0; i < etudiants.Cne.Count; i++)
+			{
+
+				ConcourOral con = _context.CouncourOrals.Find(etudiants.Cne[i]);
+				con.Classement = etudiants.Classement[i];
+				_context.SaveChanges();
+			}
+
+			return RedirectToAction("index");
+		}
+
+
+
+		public ActionResult INDUS4()
+		{
+			string type_fil = "indus";
+			var model = new UserViewModel();
+			model.Classement = new List<int>();
+			model.Cne = new List<string>();
+
+
+			model.Num_dossier = new List<int>();
+			model.Cin = new List<string>();
+			model.Prenom = new List<string>();
+			model.Filiere = new List<string>();
+			model.Diplome = new List<string>();
+			model.Etablissement = new List<string>();
+			model.Nom = new List<string>();
+			model.VilleObtention = new List<string>();
+			model.Specialite = new List<string>();
+
+
+			if (!isAdmin())
+			{
+				return RedirectToAction("Login", "AdminAuth");
+			}
+			var x = corret.corr4(type_fil);
+			foreach (var item in x)
+			{
+				model.Cne.Add(item.Cne);
+				model.Num_dossier.Add(item.Num_dossier);
+				model.Cin.Add(item.Cin);
+				model.Prenom.Add(item.Prenom);
+				model.Filiere.Add(item.Filiere);
+				model.Diplome.Add(item.Diplome);
+				model.Nom.Add(item.Nom);
+				model.Etablissement.Add(item.Etablissement);
+				model.VilleObtention.Add(item.VilleObtention);
+				model.Specialite.Add(item.Specialite);
+				model.Classement.Add(item.Classement);
+
+			}
+			return View(model);
+		}
+
+
+
+		[HttpPost]
+		public ActionResult INDUS_Post4(UserViewModel etudiants)
+		{
+			for (int i = 0; i < etudiants.Cne.Count; i++)
+			{
+
+				ConcourOral con = _context.CouncourOrals.Find(etudiants.Cne[i]);
+				con.Classement = etudiants.Classement[i];
+				_context.SaveChanges();
+			}
+
+			return RedirectToAction("index");
+
+		}
+
+
+	}
 }

@@ -17,6 +17,6 @@ namespace GestionConcoursCore.Models
         public string VilleObtention { get; set; }
         public string Cne { get; set; }
         public string Specialite { get; set; }
-        public double Classement { get; set; }
+        public int Classement { get; set; }
     }
 }
