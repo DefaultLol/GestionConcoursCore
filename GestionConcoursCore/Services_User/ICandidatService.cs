@@ -1,5 +1,6 @@
 ﻿using GestionConcoursCore.Models;
 using GestionConcoursCore.ViewModels;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,10 @@ namespace GestionConcoursCore.Services_User
         void setDiplome(DiplomeModel saisi);
 
         string checkConformity(string cne);
+
+        string uploadPicture(IFormFile file,string cne);
+
+        void uploadFichierScanne(IFormFile[] files,string cne);
 
 
     }

@@ -15,7 +15,7 @@
                 </h2>
                 <hr class="col-md-8 offset-md-2 mb-5" />
                 <div class="offset-5">
-                    <img src="~/images/userPic/@ViewBag.photo" id="image" style="border-radius: 50%; width:150px; height:150px" />
+                    <img src="../candidatImages/@ViewBag.photo" id="image" style="border-radius: 50%; width:150px; height:150px" />
                 </div>
                 <br />
                 <div class="offset-2">
@@ -234,9 +234,10 @@
                 contentType: false,
                 processData: false,
                 success: function (response) {
+                    console.log(response);
                     if (response != "icon.png") {
-                        $("#image").attr("src", "../Pictures/userPic/" + response);
-                        $("#frontImage").attr("src", "../Pictures/userPic/" + response);
+                        $("#image").attr("src", "../../candidatImages/" + response);
+                        $("#frontImage").attr("src", "../../candidatImages/" + response);
                     }
                     else {
                         alert("error");

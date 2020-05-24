@@ -6,13 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="NewFolder\**" />
-    <Content Remove="NewFolder\**" />
-    <EmbeddedResource Remove="NewFolder\**" />
-    <None Remove="NewFolder\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Remove="wwwroot\css\user_register.css" />
     <Content Remove="wwwroot\images\admin_pic\admin.svg" />
     <Content Remove="wwwroot\images\admin_pic\admin2.svg" />
@@ -1920,6 +1913,8 @@
     <Folder Include="wwwroot\content_user\" />
     <Folder Include="wwwroot\homePage\" />
     <Folder Include="wwwroot\epreuves\" />
+    <Folder Include="wwwroot\candidatImages\" />
+    <Folder Include="wwwroot\DiplomeScanné\" />
   </ItemGroup>
 
 </Project>

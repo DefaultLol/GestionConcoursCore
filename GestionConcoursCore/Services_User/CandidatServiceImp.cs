@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using GestionConcoursCore.Data;
 using GestionConcoursCore.Models;
 using GestionConcoursCore.ViewModels;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestionConcoursCore.Services_User
@@ -13,10 +16,12 @@ namespace GestionConcoursCore.Services_User
     public class CandidatServiceImp : ICandidatService
     {
         GestionConcourCoreDbContext db;
+        private readonly IHostingEnvironment hostingEnvironment;
 
-        public CandidatServiceImp(GestionConcourCoreDbContext db)
+        public CandidatServiceImp(GestionConcourCoreDbContext db, IHostingEnvironment hostingEnvironment)
         {
             this.db = db;
+            this.hostingEnvironment = hostingEnvironment;
         }
 
         public Candidat getTotalCandidat(string cne)
@@ -208,6 +213,67 @@ namespace GestionConcoursCore.Services_User
             return isNull;
         }
 
-       
+        public string uploadPicture(IFormFile file, string cne)
+        {
+            string response="";
+            string uniqueFileName;
+            try
+            {
+                String extension = Path.GetExtension(file.FileName);
+                //se positionner dans le dossier
+                string uploadFolder = Path.Combine(hostingEnvironment.WebRootPath, "candidatImages");
+                //make a unique filename
+                Random r = new Random();
+                int rInt = r.Next(0, 10000);
+                uniqueFileName = rInt.ToString() + extension.ToLower();
+                //définir le chemin complet
+                string filePath = Path.Combine(uploadFolder, uniqueFileName);
+                //upload dans le fichier epreuve
+                file.CopyTo(new FileStream(filePath, FileMode.Create));
+                //Inserer le name dans la bd
+                var x = db.Candidats.Where(c => c.Cne == cne).SingleOrDefault();
+                x.Photo = uniqueFileName;
+                db.SaveChanges();
+                response = uniqueFileName;
+            }
+            catch (Exception ex)
+            {
+                response = "icon.jpg";
+            }
+            return response;
+        }
+
+        public void uploadFichierScanne(IFormFile[] files, string cne)
+        {
+            string globalName = "";
+            foreach (IFormFile file in files)
+            {
+                //Checking file is available to save.  
+                if (file != null)
+                {
+                    var InputFileName = Path.GetFileName(file.FileName);
+                    globalName += InputFileName + "|";
+                    var uploadFolder = Path.Combine(hostingEnvironment.WebRootPath, "DiplomeScanné");
+                    string filePath = Path.Combine(uploadFolder, InputFileName);
+                    //Save file to server folder  
+                    file.CopyTo(new FileStream(filePath, FileMode.Create));
+                }
+
+            }
+            var y = db.Fichiers.Where(f => f.Cne == cne).SingleOrDefault();
+            if (y == null)
+            {
+                Fichier fichier = new Fichier();
+                fichier.Cne = cne;
+                fichier.nom = globalName;
+                db.Fichiers.Add(fichier);
+                db.SaveChanges();
+            }
+            else
+            {
+                y.nom = globalName;
+                db.SaveChanges();
+            }
+        }
     }
 }

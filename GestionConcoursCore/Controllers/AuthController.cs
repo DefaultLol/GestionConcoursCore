@@ -234,6 +234,8 @@ namespace GestionConcoursCore.Controllers
             }
             else
             {
+                HttpContext.Session.SetString("nom", x.Nom);
+                HttpContext.Session.SetString("prenom", x.Prenom);
                 HttpContext.Session.SetString("cne", candidat.Cne);
                 HttpContext.Session.SetInt32("niveau", x.Niveau);
                 HttpContext.Session.SetString("role", "user");

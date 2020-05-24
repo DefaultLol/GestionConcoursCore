@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,8 +9,8 @@ namespace GestionConcoursCore.Models
 {
     public class FichierModel
     {
-        //[Required(ErrorMessage = "Please select file.")]
+        [Required(ErrorMessage = "Please select file.")]
         //[Display(Name = "Browse File")]
-        //public HttpPostedFileBase[] files { get; set; }
+        public IFormFile[] files { get; set; }
     }
 }

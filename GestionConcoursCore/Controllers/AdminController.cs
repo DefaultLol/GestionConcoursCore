@@ -356,6 +356,16 @@ namespace GestionConcoursCore.Controllers
 
         /*###################################################  FIN  SELECTION  ############################################# */
 
+        /*###################################################  DEBUT  Fichier Scanné  ############################################# */
+
+        public JsonResult FichierScanne(string cne, int niveau)
+        {
+            var result = epreuve.diplomeFile(cne, niveau);
+            return Json(result);
+        }
+
+        /*###################################################  FIN  DEBUT  Fichier Scanné  ############################################# */
+
         public IActionResult Statistique3ApresConcours()
         {
             if (!isAdmin())

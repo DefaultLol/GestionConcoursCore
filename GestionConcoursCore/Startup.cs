@@ -48,6 +48,7 @@ namespace GestionConcoursCore
             services.AddScoped<IEnregistrementService, EnregistrementServiceImp>();
 			services.AddScoped <ICorrectionService, CorrectionServiceImp> ();
             services.AddTransient<IStatistiqueService, StatistiqueServiceImpl>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

@@ -101,6 +101,34 @@ namespace GestionConcoursCore.Controllers
             return View(info);
         }
 
+        public JsonResult Image(IFormFile file)
+        {
+            string response = " ";
+            string cne = HttpContext.Session.GetString("cne");
+            if (file != null)
+            {
+                response=candidat_service.uploadPicture(file, cne);
+                HttpContext.Session.SetString("photo", response);
+            } 
+            else
+            {
+                response = "icon.jpg";
+            }
+            return Json(response);
+        }
+
+        [HttpPost]
+        public ActionResult FichierScanne(IFormFile[] files)
+        {
+            string cne = HttpContext.Session.GetString("cne");
+            if (ModelState.IsValid)
+            {
+                candidat_service.uploadFichierScanne(files, cne);
+                ViewBag.UploadStatus = files.Count().ToString() + " files uploaded successfully.";
+            }
+            return View();
+        }
+
         //##############################################  BACCALAUREAT  ##################################################
 
         public IActionResult ModifierBac()
