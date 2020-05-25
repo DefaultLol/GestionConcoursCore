@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Rotativa.AspNetCore;
 
 namespace GestionConcoursCore
 {
@@ -48,6 +49,7 @@ namespace GestionConcoursCore
             services.AddScoped<IEnregistrementService, EnregistrementServiceImp>();
 			services.AddScoped <ICorrectionService, CorrectionServiceImp> ();
             services.AddTransient<IStatistiqueService, StatistiqueServiceImpl>();
+            services.AddTransient<IFiche, FicheImp>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddSession();
@@ -78,6 +80,8 @@ namespace GestionConcoursCore
                     name: "default",
                     template: "{controller=Landing}/{action=Index}/{id?}");
             });
+
+            RotativaConfiguration.Setup(env);
         }
     }
 }

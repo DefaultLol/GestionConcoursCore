@@ -8,7 +8,7 @@ namespace GestionConcoursCore.Services
 {
     public interface IEnregistrementService
     {
-        IEnumerable<EnregistrementInfo> listetByNiveau(int niveau);
+        IEnumerable<ListEnregistrement> listetByNiveau(int niveau);
         void enregisterByCin(string cin);
         IEnumerable<EnregistrementInfo> infosCandidatByCin(string cin);
     }

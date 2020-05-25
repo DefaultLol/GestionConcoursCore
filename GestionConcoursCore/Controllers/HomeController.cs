@@ -11,6 +11,8 @@ using GestionConcoursCore.Services_User;
 using GestionConcoursCore.ViewModels;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Rotativa.AspNetCore;
 
 namespace GestionConcoursCore.Controllers
 {
@@ -19,12 +21,18 @@ namespace GestionConcoursCore.Controllers
         private readonly ICandidatService candidat_service;
         private readonly IEpreuveService epreuve;
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly IFiche fiche;
+        
 
-        public HomeController(ICandidatService candidat_service, IEpreuveService epreuve, IHostingEnvironment hostingEnvironment)
+        private readonly GestionConcourCoreDbContext _context;
+
+        public HomeController(GestionConcourCoreDbContext _context,IFiche fiche,ICandidatService candidat_service, IEpreuveService epreuve, IHostingEnvironment hostingEnvironment)
         {
             this.candidat_service = candidat_service;
             this.epreuve = epreuve;
             this.hostingEnvironment = hostingEnvironment;
+            this.fiche = fiche;
+            this._context = _context;
         }
 
         public IActionResult Index()
@@ -235,7 +243,8 @@ namespace GestionConcoursCore.Controllers
             return View();
         }
 
-        public IActionResult Fiche()
+        // ------------------- FICHE CONVOCATION
+        public IActionResult Fiche(string id, string click = "empty")
         {
             if (!isCandidat())
             {
@@ -250,9 +259,27 @@ namespace GestionConcoursCore.Controllers
                 return RedirectToAction("Step1", "Auth");
             }
 
-            return View();
+            Candidat data = fiche.GetCandidat(cne);
+            if (data.Diplome.Type == null || data.Diplome.VilleObtention == null)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(data);
         }
 
+
+        public IActionResult ImprimerConvocation(string cne)
+        {
+
+            Candidat data = fiche.GetCandidat(cne);
+            ViewBag.Imprimer = "imprimer";
+
+            return new ViewAsPdf("FicheImprime", data);
+        }
+
+
+
+        // --------------------------- FIN FICHE CONVOCATION
 
         //##############################################  EPREUVE  ##################################################
 

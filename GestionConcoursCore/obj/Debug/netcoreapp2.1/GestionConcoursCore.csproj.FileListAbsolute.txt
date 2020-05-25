@@ -165,22 +165,16 @@ C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcou
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Recherche4.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Selection3.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Selection4.g.cshtml.cs
-C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique3.g.cshtml.cs
-C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique3ApresConcours.g.cshtml.cs
-C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique4.g.cshtml.cs
-C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique4ApresConcours.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Login.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\PasswordOublie.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Register.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Step1.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Step2.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Auth\Step3.g.cshtml.cs
-C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Acceuil.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Deconnexion.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Epreuve.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Fiche.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\FichierScanne.g.cshtml.cs
-C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\ModifierBac.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\ModifierDiplome.g.cshtml.cs
 C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\ModifierFiliere.g.cshtml.cs
@@ -545,3 +539,22 @@ C:\Users\Tarik Ouhamou\Source\Repos\DefaultLol\GestionConcoursCore\GestionConcou
 C:\Users\Tarik Ouhamou\Source\Repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\UploadEpreuve.g.cshtml.cs
 C:\Users\Tarik Ouhamou\Source\Repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Accueil.g.cshtml.cs
 C:\Users\Tarik Ouhamou\Source\Repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Landing\Index.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Enregistrement.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\EnregistrementCin.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\GPMC.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\GPMC4.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\GTR.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\GTR4.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\INDUS.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\INDUS4.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\INFO.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\INFO4.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique3A.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique3ApresConcour.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique4A.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Statistique4ApresConcour.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Admin\UploadEpreuve.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Accueil.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Landing\Index.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\PdfLayout.g.cshtml.cs
+C:\Users\AndroidStar\Desktop\Folders\ProjetASP\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\FicheImprime.g.cshtml.cs

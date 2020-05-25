@@ -454,13 +454,15 @@ namespace GestionConcoursCore.Controllers
         /*###################################################  ENREGISTREMENT  ############################################# */
 
         //lister les candidats par niveau :
-        public JsonResult etudiantByNiveau(string niveau)
+
+        public JsonResult getEtudiantByNiveau(int niveau)
         {
-            var liste = enregistrement.listetByNiveau(Int32.Parse(niveau));
-            return Json(liste);
+            var x = enregistrement.listetByNiveau(niveau);
+            
+            return Json(x);
         }
 
-        public JsonResult EnregistrementCandidat(string cin)
+        public JsonResult generateNumDossier(string cin)
         {
             enregistrement.enregisterByCin(cin);
             return Json("test");
@@ -473,8 +475,10 @@ namespace GestionConcoursCore.Controllers
             return Json(infos);
         }
 
-        /*################################################### FIN ENREGISTREMENT  ############################################# */
 
+
+        /*################################################### FIN ENREGISTREMENT  ############################################# */
+        
 
 
         private bool isAdmin()

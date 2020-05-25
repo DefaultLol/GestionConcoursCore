@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "3fc04f0a988e05269467144b70dcaa74358e2ddc"
+    "signature": "9d840623619cdd768e7f1bf6e7cdabc0d688c076"
   },
   "compilationOptions": {
     "defines": [
@@ -34,7 +34,8 @@
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
-          "NLog.Extensions.Logging": "1.0.0-rtm-rc7"
+          "NLog.Extensions.Logging": "1.0.0-rtm-rc7",
+          "Rotativa.AspNetCore": "1.0.6"
         },
         "runtime": {
           "GestionConcoursCore.dll": {}
@@ -1074,6 +1075,20 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "Rotativa.AspNetCore/1.0.6": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc": "2.1.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Rotativa.AspNetCore.dll": {
+            "assemblyVersion": "1.0.6.0",
+            "fileVersion": "1.0.6.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Rotativa.AspNetCore.dll": {}
         }
       },
       "runtime.native.System.Net.Security/4.3.0": {
@@ -4791,6 +4806,13 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "Rotativa.AspNetCore/1.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LtvTaKlyWq4R1g5OxzMYqMS72adypYoHTMJAaQ/Liw5H/ezr5UKxPexOMnb98W5BuohCjokJJiwujr7au4lLBA==",
+      "path": "rotativa.aspnetcore/1.0.6",
+      "hashPath": "rotativa.aspnetcore.1.0.6.nupkg.sha512"
     },
     "runtime.native.System.Net.Security/4.3.0": {
       "type": "package",

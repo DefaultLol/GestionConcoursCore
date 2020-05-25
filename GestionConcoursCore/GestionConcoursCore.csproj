@@ -93,6 +93,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
     <PackageReference Include="NLog.Extensions.Logging" Version="1.0.0-rtm-rc7" />
+    <PackageReference Include="Rotativa.AspNetCore" Version="1.0.6" />
   </ItemGroup>
 
   <ItemGroup>

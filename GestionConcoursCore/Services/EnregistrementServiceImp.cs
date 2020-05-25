@@ -43,32 +43,30 @@ namespace GestionConcoursCore.Services
         }
 
         //retourne la liste des etudiants selon le niveau :
-        public IEnumerable<EnregistrementInfo> listetByNiveau(int niveau)
+        public IEnumerable<ListEnregistrement> listetByNiveau(int niveau)
         {
-                        
-            var res = (from cand in db.Candidats
-                join fil in db.Filieres on cand.ID equals fil.ID
-                 join dipl in db.Diplomes on cand.Cne equals dipl.Cne
-                 where cand.Niveau == niveau
-                 select new EnregistrementInfo
-                 {
-                     Nom = cand.Nom,
-                     Prenom = cand.Prenom,
-                     Cin = cand.Cin,
-                     Niveau = cand.Niveau,
-                     Photo = cand.Photo,
-                     Num_dossier = cand.Num_dossier,
-                     Presence = cand.Presence,
 
-                     Cne = cand.Cne,
+            var x = (from c in db.Candidats
 
-                     NomFil = fil.Nom,
+                     join a in db.Filieres on c.ID equals a.ID
 
-                     TypeDipl = dipl.Type,
-                 }
-             ) ;
-           
-            return res.ToList();
+                     where c.Niveau == niveau
+
+                     orderby c.Num_dossier
+
+                     select new ListEnregistrement
+                     {
+                         Nom = c.Nom,
+                         Prenom = c.Prenom,
+                         Filiere = a.Nom,
+                         Cin = c.Cin,
+                         Num_dossier = c.Num_dossier,
+                         Sexe = c.Sexe
+
+
+                     }).ToList();
+
+            return x;
         }
 
         public void enregisterByCin(string cin)

@@ -12,5 +12,6 @@ namespace GestionConcoursCore.Models
         public string Filiere { get; set; }
         public string Cin { get; set; }
         public int Num_dossier { get; set; }
+        public string Sexe { get; set; }
     }
 }
