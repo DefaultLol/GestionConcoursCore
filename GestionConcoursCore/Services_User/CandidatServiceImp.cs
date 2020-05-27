@@ -108,6 +108,40 @@ namespace GestionConcoursCore.Services_User
             db.Update(candidat);
             db.SaveChanges();
         }
+        //#################################################  FILIERE  #########################################
+
+
+        public string getFiliere(string cne)
+        {
+            /*
+            var data = (from c in db.Candidats
+                        join f in db.Filieres on c.ID equals f.ID
+                        where c.Cne.Equals(cne)
+                        select new FiliereModel
+                        {
+                            Nom = f.Nom
+                        });
+
+            return data.First();
+            */
+
+            
+       
+        var candidat = db.Candidats.Find(cne);
+        var filiere = db.Filieres.Find(candidat.ID);
+
+        string nom = filiere.Nom;
+        return nom;
+        
+    }
+
+        public void setFiliere(string cne, int ID)
+        {
+            var candidat = db.Candidats.Find(cne);
+            candidat.ID = ID;
+            db.SaveChanges();
+        }
+
 
         //#################################################  DIPLOME  #########################################
 
@@ -275,5 +309,6 @@ namespace GestionConcoursCore.Services_User
                 db.SaveChanges();
             }
         }
+
     }
 }

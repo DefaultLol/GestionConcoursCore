@@ -172,6 +172,50 @@ namespace GestionConcoursCore.Controllers
             return View(bac);
         }
 
+        //##############################################  FILIERE  ##################################################
+
+        public IActionResult ModifierFiliere()
+        {
+            if (!isCandidat())
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+
+            string cne = HttpContext.Session.GetString("cne");
+            int? verified = HttpContext.Session.GetInt32("verified");
+
+            if (verified == 0)
+            {
+                return RedirectToAction("Step1", "Auth");
+            }
+           
+
+            
+            var filiere = candidat_service.getFiliere(cne);
+            ViewData["filiere"] = filiere;
+
+            return View(); 
+            
+
+            /*DiplomeModel diplome = candidat_service.getDiplome(cne);
+            return View(diplome);
+            */
+        }
+       
+
+        [HttpPost]
+        public IActionResult ModifierFiliere(int ID)
+        {
+            if (ModelState.IsValid)
+            {
+                string cne = HttpContext.Session.GetString("cne");
+                candidat_service.setFiliere(cne,ID);
+                TempData["message"] = "Filiere Modified succefully";
+                return RedirectToAction("Acceuil", "Home");
+            }
+            return View(ID);
+        }
+
         //##############################################  DIPLOME  ##################################################
 
         public IActionResult ModifierDiplome()
@@ -225,23 +269,7 @@ namespace GestionConcoursCore.Controllers
             return View();
         }
 
-        public IActionResult ModifierFiliere()
-        {
-            if (!isCandidat())
-            {
-                return RedirectToAction("Login", "Auth");
-            }
-
-            string cne = HttpContext.Session.GetString("cne");
-            int? verified = HttpContext.Session.GetInt32("verified");
-
-            if (verified == 0)
-            {
-                return RedirectToAction("Step1", "Auth");
-            }
-
-            return View();
-        }
+        
 
         // ------------------- FICHE CONVOCATION
         public IActionResult Fiche(string id, string click = "empty")

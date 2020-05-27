@@ -1,11 +1,65 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model GestionConcoursCore.ViewModels.FiliereModel
+@{
+    ViewData["Title"] = "ModifierFiliere";
+
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
+<section>
+    <div class="section__content section__content--p30 m-t-75">
+        <div class="container-fluid">
+            <!-- USER DATA-->
+            <div class="user-data m-b-40">
 
-<div class="page-content-wrapper-inner">
-    <div class="content-viewport">
-        <h3>Hello</h3>
+                <h2 class="title-3 mb-4 text-center font-weight-bold">
+                    <i class="iconify mr-3" data-icon="bx:bxs-calendar-edit" data-inline="true" style="color: darkturquoise; height:32px; width:32px;"></i>
+                    Modification de la Filière Choisie
+                </h2>
+                <hr style="margin:15px 150px 40px 80px" />
+
+                @using (Html.BeginForm("ModifierFiliere", "Home", FormMethod.Post))
+                {
+                    <div class="row d-flex justify-content-center m-b-30">
+                        <div class="col-md-11">
+                            <div class="form-horizontal">
+                                <div class="alert alert-success">
+                                    <span>Vous avez choisi de postuler à @ViewData["filiere"] </span>
+                                </div>
+                            </div>
+                            <div class="form-horizontal">
+                                <div class="form-group offset-4">
+                                    <br />
+
+                                    <div class="custom-control custom-radio mt-2">
+                                        <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="ID" value="1" >
+                                        <label class="custom-control-label" for="defaultGroupExample1">Génie Informatique</label>
+                                    </div>
+                                    <div class="custom-control custom-radio mt-2">
+                                        <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="ID" value="2">
+                                        <label class="custom-control-label" for="defaultGroupExample2">Génie Réseau et Télécom</label>
+                                    </div>
+                                    <div class="custom-control custom-radio mt-2">
+                                        <input type="radio" class="custom-control-input" id="defaultGroupExample3" name="ID" value="3">
+                                        <label class="custom-control-label" for="defaultGroupExample3">Génie Industriel</label>
+                                    </div>
+                                    <div class="custom-control custom-radio mt-2">
+                                        <input type="radio" class="custom-control-input" id="defaultGroupExample4" name="ID" value="4">
+                                        <label class="custom-control-label" for="defaultGroupExample4">Génie Procedès et M.C</label>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10 d-flex justify-content-center" style="margin-bottom:250px">
+                                        <input type="submit" value=" Modifier " class="btn btn-primary px-4 mt-2 mx-2" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
     </div>
-</div>
+</section>
+

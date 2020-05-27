@@ -21,6 +21,9 @@ namespace GestionConcoursCore.Services_User
         DiplomeModel getDiplome(string cne);
         void setDiplome(DiplomeModel saisi);
 
+        string getFiliere(string cne);
+        void setFiliere(string cne, int ID);
+
         string checkConformity(string cne);
 
         string uploadPicture(IFormFile file,string cne);
