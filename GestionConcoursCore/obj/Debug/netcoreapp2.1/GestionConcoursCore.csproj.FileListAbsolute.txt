@@ -639,3 +639,5 @@ F:\Documents\cycle\S8\cAvancée\Core\GestionConcoursCore\GestionConcoursCore\obj
 F:\Documents\cycle\S8\cAvancée\Core\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.dll
 F:\Documents\cycle\S8\cAvancée\Core\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.pdb
 F:\Documents\cycle\S8\cAvancée\Core\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\GestionConcoursCore.csproj.CopyComplete
+C:\Users\Tarik Ouhamou\Source\Repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Home\FicheImprime.g.cshtml.cs
+C:\Users\Tarik Ouhamou\Source\Repos\DefaultLol\GestionConcoursCore\GestionConcoursCore\obj\Debug\netcoreapp2.1\Razor\Views\Shared\PdfLayout.g.cshtml.cs
