@@ -154,7 +154,6 @@
     }
     //#########################################################
     $(document).ready(function () {
-        alert("nice")
         //search button
         $("#search").click(function () {
             $.get("/Admin/SearchCriteria", { Criteria: $("#criteria").val(), Key: $("#key").val(), Diplome: $("#diplome").val(), Filiere: $("#filiere").val(), Niveau: 3 }, function (data) {

@@ -189,31 +189,26 @@ namespace GestionConcoursCore.Controllers
                 return RedirectToAction("Step1", "Auth");
             }
            
-
             
             var filiere = candidat_service.getFiliere(cne);
-            ViewData["filiere"] = filiere;
+            ViewData["filiere"] = filiere.Nom;
 
-            return View(); 
+            return View(filiere); 
             
-
-            /*DiplomeModel diplome = candidat_service.getDiplome(cne);
-            return View(diplome);
-            */
         }
        
 
         [HttpPost]
-        public IActionResult ModifierFiliere(int ID)
+        public IActionResult ModifierFiliere(Filiere model)
         {
             if (ModelState.IsValid)
             {
                 string cne = HttpContext.Session.GetString("cne");
-                candidat_service.setFiliere(cne,ID);
+                candidat_service.setFiliere(cne,model.ID);
                 TempData["message"] = "Filiere Modified succefully";
-                return RedirectToAction("Acceuil", "Home");
+                return RedirectToAction("Index");
             }
-            return View(ID);
+            return View(model);
         }
 
         //##############################################  DIPLOME  ##################################################

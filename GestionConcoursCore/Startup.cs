@@ -50,6 +50,7 @@ namespace GestionConcoursCore
 			services.AddScoped <ICorrectionService, CorrectionServiceImp> ();
             services.AddTransient<IStatistiqueService, StatistiqueServiceImpl>();
             services.AddTransient<IFiche, FicheImp>();
+            services.AddTransient<IIndexService, IndexServiceImp>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddSession();

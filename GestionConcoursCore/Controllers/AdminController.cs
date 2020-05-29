@@ -18,8 +18,8 @@ namespace GestionConcoursCore.Controllers
     {
 		private readonly GestionConcourCoreDbContext _context;
 
-		
 
+        private IIndexService index;
 		private ISearch3Service search;
         private ICorbeil3Service corbeil;
         private ISelectionService selection;
@@ -29,8 +29,9 @@ namespace GestionConcoursCore.Controllers
 		private readonly IEpreuveService epreuve;
         private IStatistiqueService statistique;
 
-        public AdminController(GestionConcourCoreDbContext context,ISearch3Service search,ICorbeil3Service corbeil,IEnregistrementService enregistrement,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve, ICorrectionService corret, IStatistiqueService statistique)
+        public AdminController(GestionConcourCoreDbContext context, IIndexService index, ISearch3Service search,ICorbeil3Service corbeil,IEnregistrementService enregistrement,ISelectionService selection, IPreselectionService preselec, IEpreuveService epreuve, ICorrectionService corret, IStatistiqueService statistique)
         {
+            this.index = index;
             this.search = search;
             this.corbeil = corbeil;
             this.selection = selection;
@@ -45,11 +46,13 @@ namespace GestionConcoursCore.Controllers
 
         public IActionResult Index()
         {
-            if (isAdmin())
+            if (!isAdmin())
             {
-                return View();
+                return RedirectToAction("Login", "AdminAuth");
+
             }
-            return RedirectToAction("Login", "AdminAuth");
+                        
+            return View(index.getIndexModel());
 
         }
 

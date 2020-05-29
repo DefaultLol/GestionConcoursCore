@@ -1,21 +1,22 @@
-﻿@model GestionConcoursCore.ViewModels.FiliereModel
+﻿@model GestionConcoursCore.Models.Filiere
 @{
     ViewData["Title"] = "ModifierFiliere";
 
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-<section>
-    <div class="section__content section__content--p30 m-t-75">
+<div class="page-content-wrapper-inner" style="font-family:'Arial Rounded MT';">
+    <div class="content-viewport">
         <div class="container-fluid">
             <!-- USER DATA-->
             <div class="user-data m-b-40">
 
-                <h2 class="title-3 mb-4 text-center font-weight-bold">
-                    <i class="iconify mr-3" data-icon="bx:bxs-calendar-edit" data-inline="true" style="color: darkturquoise; height:32px; width:32px;"></i>
+                <h2 class="title-3 mb-4 mt-4 text-center text-warning font-weight-bold">
+                    <i class="mdi mdi-function link-icon mr-4"></i>
                     Modification de la Filière Choisie
                 </h2>
-                <hr style="margin:15px 150px 40px 80px" />
+
+                <hr class="col-md-8 offset-md-2 mb-5" />
 
                 @using (Html.BeginForm("ModifierFiliere", "Home", FormMethod.Post))
                 {
@@ -31,26 +32,26 @@
                                     <br />
 
                                     <div class="custom-control custom-radio mt-2">
-                                        <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="ID" value="1" >
+                                        <input type="radio" asp-for="ID" class="custom-control-input" id="defaultGroupExample1" name="ID" value="1">
                                         <label class="custom-control-label" for="defaultGroupExample1">Génie Informatique</label>
                                     </div>
                                     <div class="custom-control custom-radio mt-2">
-                                        <input type="radio" class="custom-control-input" id="defaultGroupExample2" name="ID" value="2">
+                                        <input type="radio" asp-for="ID" class="custom-control-input" id="defaultGroupExample2" name="ID" value="2">
                                         <label class="custom-control-label" for="defaultGroupExample2">Génie Réseau et Télécom</label>
                                     </div>
                                     <div class="custom-control custom-radio mt-2">
-                                        <input type="radio" class="custom-control-input" id="defaultGroupExample3" name="ID" value="3">
+                                        <input type="radio" asp-for="ID" class="custom-control-input" id="defaultGroupExample3" name="ID" value="3">
                                         <label class="custom-control-label" for="defaultGroupExample3">Génie Industriel</label>
                                     </div>
                                     <div class="custom-control custom-radio mt-2">
-                                        <input type="radio" class="custom-control-input" id="defaultGroupExample4" name="ID" value="4">
+                                        <input type="radio" asp-for="ID" class="custom-control-input" id="defaultGroupExample4" name="ID" value="4">
                                         <label class="custom-control-label" for="defaultGroupExample4">Génie Procedès et M.C</label>
                                     </div>
 
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-md-offset-2 col-md-10 d-flex justify-content-center" style="margin-bottom:250px">
-                                        <input type="submit" value=" Modifier " class="btn btn-primary px-4 mt-2 mx-2" />
+                                    <div class="col-md-offset-2 col-md-10 d-flex justify-content-center">
+                                        <input type="submit" value=" Modifier la filière " class="btn btn-primary btn-rounded px-4 mt-5 mx-2"  />
                                     </div>
                                 </div>
                             </div>
@@ -61,5 +62,5 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 
