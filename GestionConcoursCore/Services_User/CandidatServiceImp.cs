@@ -272,9 +272,13 @@ namespace GestionConcoursCore.Services_User
                 if (file != null)
                 {
                     var InputFileName = Path.GetFileName(file.FileName);
-                    globalName += InputFileName + "|";
+                    string ext = Path.GetExtension(InputFileName);
+                    Random rand = new Random();
+                    int rInt = rand.Next(0, 100000);
+                    string saveName = "diplome" + rInt.ToString() + ext;
+                    globalName += "diplome"+rInt.ToString()+ext+ "|";
                     var uploadFolder = Path.Combine(hostingEnvironment.WebRootPath, "DiplomeScanné");
-                    string filePath = Path.Combine(uploadFolder, InputFileName);
+                    string filePath = Path.Combine(uploadFolder, saveName);
                     //Save file to server folder  
                     file.CopyTo(new FileStream(filePath, FileMode.Create));
                 }
@@ -285,13 +289,13 @@ namespace GestionConcoursCore.Services_User
             {
                 Fichier fichier = new Fichier();
                 fichier.Cne = cne;
-                fichier.nom = globalName;
+                fichier.nom =globalName;
                 db.Fichiers.Add(fichier);
                 db.SaveChanges();
             }
             else
             {
-                y.nom = globalName;
+                y.nom = y.nom+globalName;
                 db.SaveChanges();
             }
         }
