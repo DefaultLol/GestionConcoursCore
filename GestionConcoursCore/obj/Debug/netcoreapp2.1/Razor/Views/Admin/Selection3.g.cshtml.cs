@@ -86,7 +86,7 @@ using GestionConcoursCore.Models;
                     ");
             EndContext();
             BeginContext(487, 3648, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "305e7e0d11f4417c9b350ed94de53e40", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b86279f3022140acbc49d8233ecb3e97", async() => {
                 BeginContext(508, 350, true);
                 WriteLiteral(@"
                         <div class=""form-group row"">
@@ -96,7 +96,7 @@ using GestionConcoursCore.Models;
                                     ");
                 EndContext();
                 BeginContext(858, 52, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b3f4905a9a3419d859010f30b87c5a8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c67292c34f4047ea8b24f1513b298561", async() => {
                     BeginContext(885, 16, true);
                     WriteLiteral("Choix du Filiere");
                     EndContext();
@@ -121,7 +121,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(948, 56, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1259e288f8c41e88e5b23d5874d47e1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f57835bca6db483aa15d1e3117a76121", async() => {
                     BeginContext(977, 18, true);
                     WriteLiteral("Génie Informatique");
                     EndContext();
@@ -143,7 +143,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(1042, 52, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "004336640e2b47e59ca67cdd6b1c7b3e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "596e6d42d1e94e2ab64de573f8cfee21", async() => {
                     BeginContext(1069, 16, true);
                     WriteLiteral("Génie Industriel");
                     EndContext();
@@ -165,7 +165,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(1132, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "10b0ba5c4dfc4c3d981d51238d6cd117", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93576084c6ee4a81b5a630bf5e9c9e00", async() => {
                     BeginContext(1152, 3, true);
                     WriteLiteral("GTR");
                     EndContext();
@@ -187,7 +187,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(1202, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f528146e9bd4ec39e239497033d365f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e27eb91c26684d42b98f80799e755137", async() => {
                     BeginContext(1223, 4, true);
                     WriteLiteral("GPMC");
                     EndContext();
@@ -256,7 +256,7 @@ using GestionConcoursCore.Models;
                                     ");
                 EndContext();
                 BeginContext(3705, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20aa3f0a274a4a72b8189d1e31706bcd", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74d721196a064f94b76e8801fe611262", async() => {
                     BeginContext(3713, 15, true);
                     WriteLiteral("Type Classement");
                     EndContext();
@@ -276,7 +276,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(3775, 48, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9145bf625ade44c1bc20aeae8ffdc309", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8a5518578ab4e6bafd40a5e1d1f71c0", async() => {
                     BeginContext(3802, 12, true);
                     WriteLiteral("Note globale");
                     EndContext();
@@ -298,7 +298,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(3861, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f29ed785aa114ec08f74eb32709dbf53", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83ba20a533504443872886ec93834368", async() => {
                     BeginContext(3886, 17, true);
                     WriteLiteral("Note Mathematique");
                     EndContext();
@@ -320,7 +320,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(3950, 41, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "39b02b4463374381b569624874f3cd83", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f2ecf0c712e42b08813e584e1217768", async() => {
                     BeginContext(3974, 8, true);
                     WriteLiteral("Note Bac");
                     EndContext();

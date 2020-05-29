@@ -85,7 +85,7 @@ using GestionConcoursCore.Models;
                     ");
             EndContext();
             BeginContext(604, 719, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cb9e2822f9b94d008f54fccb4655ce32", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cc096756292c40c8a0b3733e8c250d2a", async() => {
                 BeginContext(625, 349, true);
                 WriteLiteral(@"
                         <div class=""form-group row"">
@@ -95,7 +95,7 @@ using GestionConcoursCore.Models;
                                     ");
                 EndContext();
                 BeginContext(974, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28afc207bacb47198732498af6741def", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "207bbcdf56934081a08a10417329e081", async() => {
                     BeginContext(1001, 17, true);
                     WriteLiteral("Choisir le niveau");
                     EndContext();
@@ -120,7 +120,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(1065, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba9e2fdc8218473ba8028bc20f0f61ab", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f1734d18ce84b31bc577286cd134422", async() => {
                     BeginContext(1081, 11, true);
                     WriteLiteral("3 eme Année");
                     EndContext();
@@ -142,7 +142,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    ");
                 EndContext();
                 BeginContext(1139, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b3e80cee40d42f4ac73740b239c4667", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c316e12b6b5145e3995566a2d1e1be62", async() => {
                     BeginContext(1155, 11, true);
                     WriteLiteral("4 ème Année");
                     EndContext();
