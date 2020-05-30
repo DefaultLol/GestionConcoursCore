@@ -77,12 +77,12 @@ using GestionConcoursCore.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(141, 615, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "55d4897dec004ffb81d625a2b2a7c5ab", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36d54a1e22f14f8d8b92acec9a1accbe", async() => {
                 BeginContext(147, 229, true);
                 WriteLiteral("\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">\r\n    ");
                 EndContext();
                 BeginContext(376, 54, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f853b02706404b57a9c0b912c6ec7904", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8baa67d814634950b930e0df17071d73", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -101,7 +101,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n    <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js\"></script>\r\n    <script src=\"//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n    <title>Inscription</title>\r\n    <!-- icon -->\r\n    ");
                 EndContext();
                 BeginContext(667, 78, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e3501848b93b4e9eb132b970b349a13a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ca70ebb4a7244c49b5c831487cd1deec", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -136,12 +136,12 @@ using GestionConcoursCore.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(760, 6077, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2542fc053c44b848bea27ec8e7b0026", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6bf7ff93e5cc4f70a43716845beaa3cd", async() => {
                 BeginContext(766, 159, true);
                 WriteLiteral("\r\n    <div class=\"container register\" style=\"opacity:0.9;\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-4 register-left mt-5\">\r\n                ");
                 EndContext();
                 BeginContext(925, 85, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "14fef2b6e80c43da86b529cf07af9a88", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bddd77bb09a04e8ebca88b15c64abe3c", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -282,7 +282,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                    </div>\r\n                                    <div class=\"form-group\">\r\n                                        <select name=\"niveau\" class=\"form-control\">\r\n                                            ");
                 EndContext();
                 BeginContext(4015, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0715fea9673e43e2b00cf0bd25c95e38", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "018bcc5e101e41a0995f727b6a430b1f", async() => {
                     BeginContext(4042, 15, true);
                     WriteLiteral("Choix de niveau");
                     EndContext();
@@ -307,7 +307,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                            ");
                 EndContext();
                 BeginContext(4112, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "683c34654f5e4cfc89d76e82cc40bcb9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aaa5dfd41a9143e0a12630f71fade23d", async() => {
                     BeginContext(4130, 11, true);
                     WriteLiteral("3 ème année");
                     EndContext();
@@ -329,7 +329,7 @@ using GestionConcoursCore.Models;
                 WriteLiteral("\r\n                                            ");
                 EndContext();
                 BeginContext(4196, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69c770d06bbd4a54aac9fd81b1c25cce", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d29a467adc844909b98f6700e2ea1cd1", async() => {
                     BeginContext(4214, 11, true);
                     WriteLiteral("4 ème année");
                     EndContext();
