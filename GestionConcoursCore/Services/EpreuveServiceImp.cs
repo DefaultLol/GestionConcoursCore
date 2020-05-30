@@ -58,7 +58,9 @@ namespace GestionConcoursCore.Services
                     //définir le chemin complet*/
                     string filePath = Path.Combine(uploadFolder, uniqueFileName);
                     //upload dans le fichier epreuve
-                    model.fichier.CopyTo(new FileStream(filePath, FileMode.Create));
+                    FileStream stream = new FileStream(filePath, FileMode.Create);
+                    model.fichier.CopyTo(stream);
+                    stream.Close();
                     //Inserer le name dans la bd
                     Epreuves epreuve = new Epreuves
                     {

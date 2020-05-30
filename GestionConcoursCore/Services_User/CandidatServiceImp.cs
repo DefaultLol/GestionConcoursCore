@@ -280,7 +280,9 @@ namespace GestionConcoursCore.Services_User
                 //définir le chemin complet
                 string filePath = Path.Combine(uploadFolder, uniqueFileName);
                 //upload dans le fichier epreuve
-                file.CopyTo(new FileStream(filePath, FileMode.Create));
+                FileStream stream = new FileStream(filePath, FileMode.Create);
+                file.CopyTo(stream);
+                stream.Close();
                 //Inserer le name dans la bd
                 var x = db.Candidats.Where(c => c.Cne == cne).SingleOrDefault();
                 x.Photo = uniqueFileName;
@@ -311,7 +313,9 @@ namespace GestionConcoursCore.Services_User
                     var uploadFolder = Path.Combine(hostingEnvironment.WebRootPath, "DiplomeScanné");
                     string filePath = Path.Combine(uploadFolder, saveName);
                     //Save file to server folder  
-                    file.CopyTo(new FileStream(filePath, FileMode.Create));
+                    FileStream stream = new FileStream(filePath, FileMode.Create);
+                    file.CopyTo(stream);
+                    stream.Close();
                 }
 
             }
