@@ -44,11 +44,18 @@ namespace GestionConcoursCore.Services
             {
                 try
                 {
+                    String extension = Path.GetExtension(model.fichier.FileName);
                     //se positionner dans le dossier
                     string uploadFolder = Path.Combine(hostingEnvironment.WebRootPath, "epreuves");
                     //make a unique filename
+                    Random r = new Random();
+                    int rInt = r.Next(0, 10000);
+                    uniqueFileName = rInt.ToString() + extension.ToLower();
+                    /*//se positionner dans le dossier
+                    string uploadFolder = Path.Combine(hostingEnvironment.WebRootPath, "epreuves");
+                    //make a unique filename
                     uniqueFileName = Guid.NewGuid().ToString() + "_" + model.fichier.FileName;
-                    //définir le chemin complet
+                    //définir le chemin complet*/
                     string filePath = Path.Combine(uploadFolder, uniqueFileName);
                     //upload dans le fichier epreuve
                     model.fichier.CopyTo(new FileStream(filePath, FileMode.Create));
