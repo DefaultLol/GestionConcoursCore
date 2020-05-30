@@ -14909,23 +14909,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tarik Ouhamou\\.nuget\\packages\\": {},
+    "C:\\Users\\AndroidStar\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tarik Ouhamou\\Source\\Repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
+      "projectUniqueName": "C:\\Users\\AndroidStar\\Desktop\\Folders\\ProjetASP\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
       "projectName": "GestionConcoursCore",
-      "projectPath": "C:\\Users\\Tarik Ouhamou\\Source\\Repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
-      "packagesPath": "C:\\Users\\Tarik Ouhamou\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tarik Ouhamou\\Source\\Repos\\DefaultLol\\GestionConcoursCore\\GestionConcoursCore\\obj\\",
+      "projectPath": "C:\\Users\\AndroidStar\\Desktop\\Folders\\ProjetASP\\GestionConcoursCore\\GestionConcoursCore\\GestionConcoursCore.csproj",
+      "packagesPath": "C:\\Users\\AndroidStar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AndroidStar\\Desktop\\Folders\\ProjetASP\\GestionConcoursCore\\GestionConcoursCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Tarik Ouhamou\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AndroidStar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
