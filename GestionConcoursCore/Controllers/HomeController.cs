@@ -68,7 +68,8 @@ namespace GestionConcoursCore.Controllers
             HttpContext.Session.SetInt32("niveau", candidat.Niveau);
 
             string message = candidat_service.checkConformity(cne);
-
+            string errorMessage = candidat_service.checkDiplome(cne);
+            ViewBag.errorMessage = errorMessage;
             ViewBag.error = message;
 
             return View(candidat);

@@ -30,11 +30,18 @@
                                 </div>
                             </div>
                         }<br>
-                         <h2 class="title-3 mb-3 mt-4 text-center text-warning font-weight-bold">
-                             <i class="mdi mdi-home link-icon mr-4"></i>
-                             Bienvenue Candidat
-                         </h2>
-
+                        <h2 class="title-3 mb-3 mt-4 text-center text-warning font-weight-bold">
+                            <i class="mdi mdi-home link-icon mr-4"></i>
+                            Bienvenue Candidat
+                        </h2>
+                        @if (ViewBag.errorMessage != "")
+                        {
+                            <div class="form-group">
+                                <div class="alert alert-danger ml-3 mr-3">
+                                    <span>@ViewBag.errorMessage</span>
+                                </div>
+                            </div>
+                        }
                         <hr class="col-md-8 offset-md-2 mb-5" />
                         <h6 class="text-center text-gray pb-5">
                             Vous êtes sur votre espace d'inscription au concours d'accès de l'ENSA de Safi

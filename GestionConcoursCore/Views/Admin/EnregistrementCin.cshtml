@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "EnregistrementCin";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -31,13 +30,11 @@
 
     <!--Ici, l'insertion des infos et tableau avec AJAX-->
     <div class="container" style='margin:50px;width:800px; background-color:white;'>
-        <table class='table' id="tablo">
-        </table>
+        <table class='table' id="tablo"></table>
     </div>
 
     <div class="container">
-        <table class='table' id="tablo1">
-        </table>
+        <table class='table' id="tablo1"></table>
     </div>
 </div>
 
@@ -50,28 +47,30 @@
         console.log("ready");
         $("#btn").on("click", function () {
             console.log("clicking");
-            
+
             //fct seulement pr l'enregistrement
-            $.get("/Admin/EnregistrementCandidat", { cin: $("#value").val() }, function (date) {  //enters this scope if cin exists in db
+            $.get("/Admin/generateNumDossier", { cin: $("#value").val() }, function (date) {  //enters this scope if cin exists in db
                 console.log("fetch cin");
 
                 $("#tablo").empty();
                 $("#tablo1").empty();
-                
+
 
                 //informations sur le candidat :
                 $.get("/Admin/etudiantByCin", { cin: $("#value").val() }, function (data) {
-                    console.log(data);
+
                     $.each(data, function (index, ligne) {
                         console.log(ligne);
 
                         //comme carte d'etudiant :
                         $("#tablo").append(
-                            
-                            "<tr><td><img src='~/images/ENSA.jpg' alt='ENSA logo' style='width:100px;height:100px;'/></td></tr> " +
-                            "<td><span style='margin:0 50px 0 0;'><br>ENSA de Safi <br>Concours d'accès en <span>" + ligne.niveau + "</span>ème année</span></td>" +
-                            "<td rowspan='4'><img src='~/images/userPic/" + ligne.photo + "' alt='Personal picture' style='width:200px;height:275px;'></td></tr>" +
-                            "<tr><td>CIN : </td><td><span id='cin1' style:'margin:0 0 0 50px;'>" + ligne.cin + "</span></td><tr>" +
+
+                            "<tr><td> <img width='100' src='/images/ENSA.jpg' /> </td>" +
+                            "<td rowspan='2'><img  src='/images/userPic/" + ligne.photo + "' alt='Personal picture' style='width:200px;'></td>"+
+                            "</tr > " +
+                            "<td><span'><br>ENSA de Safi <br>Concours d'accès en <span>" + ligne.niveau + "</span>ème année</span></td>" +
+                            "</tr>" +
+                            "<tr><td>CIN : </td><td><span id='cin1' '>" + ligne.cin + "</span></td><tr>" +
                             "<tr><td>Num dossier : </td><td><span id='dossierr'>" + ligne.num_dossier + "</span> </td></tr>"
                         );
 

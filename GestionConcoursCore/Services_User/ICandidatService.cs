@@ -30,6 +30,8 @@ namespace GestionConcoursCore.Services_User
 
         void uploadFichierScanne(IFormFile[] files,string cne);
 
+        string checkDiplome(string cne);
+
 
     }
 }

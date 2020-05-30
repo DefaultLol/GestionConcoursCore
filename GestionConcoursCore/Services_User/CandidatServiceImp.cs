@@ -227,6 +227,37 @@ namespace GestionConcoursCore.Services_User
             return msg;
         }
 
+        public string checkDiplome(string cne)
+        {
+            string msg = "";
+            var f = db.Fichiers.Where(t => t.Cne==cne).SingleOrDefault();
+            if (f==null)
+            {
+                msg = "Insérer votre diplome";
+            }
+            else
+            {
+                var c = db.Candidats.Where(e => e.Cne == cne).SingleOrDefault();
+                string diplomes = f.nom;
+                int len = diplomes.Split('|').Length;
+                if (c.Niveau == 4)
+                {
+                    if (len <= 3)
+                    {
+                        msg = "Inserer votre diplome";
+                    }
+                }
+                else
+                {
+                    if (len < 3)
+                    {
+                        msg = "Inserer votre diplome";
+                    }
+                }
+            }
+            return msg;
+        }
+
         public bool isNull(Object obj)
         {
             bool isNull = obj.GetType().GetProperties().All(p => p.GetValue(obj, null) == null); 
@@ -284,6 +315,7 @@ namespace GestionConcoursCore.Services_User
                 }
 
             }
+
             var y = db.Fichiers.Where(f => f.Cne == cne).SingleOrDefault();
             if (y == null)
             {
@@ -295,7 +327,7 @@ namespace GestionConcoursCore.Services_User
             }
             else
             {
-                y.nom = y.nom+globalName;
+                y.nom = globalName;
                 db.SaveChanges();
             }
         }
